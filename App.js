@@ -1,20 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font'
+import * as SplashScreen from 'expo-splash-screen'
+import { useCallback } from 'react'
+
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
+import SelectScreen from './screens/SelectScreen'
+import Horizon from './screens/Horizon'
+import Vertical from './screens/Vertical'
+
+SplashScreen.preventAutoHideAsync()
+
+const Stack = createNativeStackNavigator()
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [fontsLoaded, fontError] = useFonts({
+    'PuHui': require('./assets/font/AlibabaPuHuiTi-Regular.otf'),
+    'PuHui-Bold': require('./assets/font/AlibabaPuHuiTi-Bold.otf'),
+  })
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded || fontError)
+      await SplashScreen.hideAsync()
+  }, [fontsLoaded, fontError])
+
+  if (!fontsLoaded && !fontError)
+    return null
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Root">
+          {() => <SelectScreen onLayoutRootView={onLayoutRootView} />}
+        </Stack.Screen>
+        <Stack.Screen name="Horizon">
+          {() => <Horizon onLayoutRootView={onLayoutRootView} />}
+        </Stack.Screen>
+        <Stack.Screen name="Vertical">
+          {() => <Vertical onLayoutRootView={onLayoutRootView} />}
+        </Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
