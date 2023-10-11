@@ -5,7 +5,7 @@ export function setCustomText() {
   const TextRender = Text.render
 
   const customStyle = {
-    fontFamily: 'PuHui',
+    fontFamily: 'HarmonyOS-Sans',
     color: '#fff',
   }
 

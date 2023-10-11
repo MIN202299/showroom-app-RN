@@ -18,8 +18,8 @@ const Stack = createNativeStackNavigator()
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
-    'PuHui': require('./assets/font/HarmonyOS_Sans_SC_Regular.ttf'),
-    'PuHui-Bold': require('./assets/font/HarmonyOS_Sans_SC_Bold.ttf'),
+    'HarmonyOS-Sans': require('./assets/font/HarmonyOS_Sans_SC_Regular.ttf'),
+    'HarmonyOS-Sans-Bold': require('./assets/font/HarmonyOS_Sans_SC_Bold.ttf'),
   })
 
   const onLayoutRootView = useCallback(async () => {
@@ -34,15 +34,19 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{
+        headerShown: false,
+        animationTypeForReplace: 'push',
+        animation: 'slide_from_right',
+      }}>
         <Stack.Screen name="Root">
           {() => <SelectScreen onLayoutRootView={onLayoutRootView} />}
         </Stack.Screen>
-        <Stack.Screen name="Horizon">
-          {() => <Horizon onLayoutRootView={onLayoutRootView} />}
+        <Stack.Screen name="Horizon" >
+          {() => <Horizon />}
         </Stack.Screen>
-        <Stack.Screen name="Vertical">
-          {() => <Vertical onLayoutRootView={onLayoutRootView} />}
+        <Stack.Screen name="Vertical" >
+          {() => <Vertical />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
