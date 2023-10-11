@@ -39,7 +39,9 @@ export default function App() {
         animationTypeForReplace: 'push',
         animation: 'slide_from_right',
       }}>
-        <Stack.Screen name="Root">
+        <Stack.Screen name="Root" options={{
+          animationEnable: false,
+        }}>
           {() => <SelectScreen onLayoutRootView={onLayoutRootView} />}
         </Stack.Screen>
         <Stack.Screen name="Horizon" >

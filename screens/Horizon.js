@@ -56,7 +56,7 @@ export default function Horizon(props) {
         <BlurView intensity={20} style={{ flex: 1 }}>
           <View style={{ flex: 1, padding: '5%' }}>
             <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 120, marginBottom: 4, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
-              <Text style={[styles.textBold, { fontSize: 20 }]}>某某公司</Text>
+              <Text style={[styles.textBold, { fontSize: 20, textShadowRadius: 4, textShadowColor: '#fff' }]}>某某公司</Text>
             </View>
             <ImageBackground source={require('../assets/bg/h-border.png')} resizeMode='contain' style={{ flex: 1 }}>
               <View style={{ flex: 1, paddingVertical: '5%', paddingHorizontal: '15%' }}>
