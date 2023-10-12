@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "showroom-app-rn",
-    "slug": "showroom-app-rn",
+    "name": "showroom-app",
+    "slug": "showroom-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,14 +15,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dcwjoy.showroomapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.dcwjoy.showroomapprn"
+      "package": "com.dcwjoy.showroomapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -37,14 +38,15 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "daa342a0-b95c-4fd0-bfb9-1bab8f12acd7"
+        "projectId": "27c00a7a-d9c0-4239-b33d-b06e06e93000"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/daa342a0-b95c-4fd0-bfb9-1bab8f12acd7"
-    }
+      "url": "https://u.expo.dev/783f6822-c556-41f9-a538-217ed3f48397"
+    },
+    "owner": "dcwjoy"
   }
 }
