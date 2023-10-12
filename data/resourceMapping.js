@@ -3,7 +3,7 @@ export const resourceMapping = {
   '/xunqian/video2.mp4': require('../assets/companies/xunqian/video2.mp4'),
   '/kuangwei/video.mp4': require('../assets/companies/kuangwei/video.mp4'),
   '/beiming/video2.mp4': require('../assets/companies/beiming/video2.mp4'),
-  '/shuluan/b-1.png': require('../assets/companies/shuluan/b-1.png'),
+  '/shuluan/b-1.jpg': require('../assets/companies/shuluan/b-1.jpg'),
   '/shuluan/s-1.png': require('../assets/companies/shuluan/s-1.png'),
   '/shuluan/s-2.png': require('../assets/companies/shuluan/s-2.png'),
   '/shuluan/logo.png': require('../assets/companies/shuluan/logo.png'),

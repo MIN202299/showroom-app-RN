@@ -32,7 +32,7 @@ export const companyData = [
     company: '数峦云（杭州）科技有限公司',
     logo: '/shuluan/logo.png',
     mediaType: 'swipe-image',
-    src: ['/shuluan/b-1.png'],
+    src: ['/shuluan/b-1.jpg'],
     type: 'vertical',
     product: [{ name: 'XR 扩展现实', src: '/shuluan/s-1.png' }, { name: 'Digital Twins 数字孪生', src: '/shuluan/s-2.png' }],
     productName: 'Digital Twins 数字孪生',
