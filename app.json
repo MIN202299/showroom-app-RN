@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.dcwjoy.showroomapprn"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +34,17 @@
           "initialOrientation": "DEFAULT"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "daa342a0-b95c-4fd0-bfb9-1bab8f12acd7"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/daa342a0-b95c-4fd0-bfb9-1bab8f12acd7"
+    }
   }
 }
