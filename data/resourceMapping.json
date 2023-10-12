@@ -1,0 +1,22 @@
+{
+  "/shuluan/video.mp4": "require('../assets/companies/shuluan/video.mp4')",
+  "/xunqian/video2.mp4": "require('../assets/companies/xunqian/video2.mp4')",
+  "/kuangwei/video.mp4": "require('../assets/companies/kuangwei/video.mp4')",
+  "/beiming/video2.mp4": "require('../assets/companies/beiming/video2.mp4')",
+  "/shuluan/b-1.png": "require('../assets/companies/shuluan/b-1.png')",
+  "/shuluan/s-1.png": "require('../assets/companies/shuluan/s-1.png')",
+  "/shuluan/s-2.png": "require('../assets/companies/shuluan/s-2.png')",
+  "/shuluan/logo.png": "require('../assets/companies/shuluan/logo.png')",
+  "/xunqian/video.mp4": "require('../assets/companies/xunqian/video.mp4')",
+  "/xunqian/s-1.png": "require('../assets/companies/xunqian/s-1.png')",
+  "/xunqian/s-2.png": "require('../assets/companies/xunqian/s-2.png')",
+  "/xunqian/logo.png": "require('../assets/companies/xunqian/logo.png')",
+  "/kuangwei/b-1.png": "require('../assets/companies/kuangwei/b-1.png')",
+  "/kuangwei/s-1.jpeg": "require('../assets/companies/kuangwei/s-1.jpeg')",
+  "/kuangwei/s-2.jpeg": "require('../assets/companies/kuangwei/s-2.jpeg')",
+  "/kuangwei/logo.png": "require('../assets/companies/kuangwei/logo.png')",
+  "/beiming/video.mp4": "require('../assets/companies/beiming/video.mp4')",
+  "/beiming/s-1.gif": "require('../assets/companies/beiming/s-1.gif')",
+  "/beiming/s-2.png": "require('../assets/companies/beiming/s-2.png')",
+  "/beiming/logo.png": "require('../assets/companies/beiming/logo.png')"
+}
