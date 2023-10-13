@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ImageBackground, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import * as ScreenOrientation from 'expo-screen-orientation'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 // 使用本地存储
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -18,6 +18,7 @@ import { STORAGE_KEY } from '../store/constant'
 import { padding } from '../utils'
 
 import { companyData as companies } from '../data/companies'
+import { AppContext } from '../store'
 
 const styles = StyleSheet.create({
   container: {
@@ -41,6 +42,8 @@ const styles = StyleSheet.create({
 const verticalCom = companies.filter(item => item.type === 'vertical')
 const horizonCom = companies.filter(item => item.type === 'horizon')
 
+const DEV = true
+
 export default function SelectScreen(props) {
   const navigation = useNavigation()
   // 第几步
@@ -49,6 +52,9 @@ export default function SelectScreen(props) {
   const [screenName, setScreenName] = useState('')
   const labels = ['横向', '竖向']
   const [test, setTest] = useState(true)
+  const context = useContext(AppContext)
+  const [modal, setModal] = useState('')
+
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       // 屏幕自动旋转
@@ -59,14 +65,21 @@ export default function SelectScreen(props) {
   }, [])
 
   useEffect(() => {
-    AsyncStorage.getItem(STORAGE_KEY).then((res) => {
-      if (res) {
-        JSON.parse(res).direction === '横向'
-          ? navigation.navigate('Horizon')
-          : navigation.navigate('Vertical')
-      }
-    })
-  }, [])
+    console.log('context', context)
+    if (!context.state.connected)
+      setModal('Socket连接已断开，请重启应用，或者检查服务器')
+    else
+      setModal('')
+
+    if (context.state.err)
+      setModal(context.state.err)
+
+    if (context.state.config) {
+      context.state.config.direction === '横向'
+        ? navigation.navigate('Horizon')
+        : navigation.navigate('Vertical')
+    }
+  }, [context.state])
 
   function handleNext() {
     if (!direction)
@@ -85,6 +98,7 @@ export default function SelectScreen(props) {
       direction === '横向'
         ? navigation.navigate('Horizon')
         : navigation.navigate('Vertical')
+      context.setGlobalContext({ ...context, config: { screenName, direction } })
       setTest(false)
     }
     catch (e) {
@@ -178,6 +192,23 @@ export default function SelectScreen(props) {
               )
           }
         </View>
+        {/* 弹框 */}
+        {
+          !DEV && (
+            <Modal animationType='slide' transparent={true} visible={!!modal}>
+              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <View style={{ borderRadius: 4, overflow: 'hidden' }}>
+                  <BlurView
+                    intensity={80}
+                    tint='light'
+                    style={{ paddingHorizontal: 20, paddingVertical: 40 }}>
+                    <Text style={[styles.textBold, { color: '#ef4444' }]}>{modal}</Text>
+                  </BlurView>
+                </View>
+              </View>
+            </Modal>
+          )
+        }
 
         <StatusBar style='auto' hidden></StatusBar>
       </View>

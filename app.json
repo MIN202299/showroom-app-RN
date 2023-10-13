@@ -23,7 +23,11 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+
       "package": "com.dcwjoy.showroomapp"
+    },
+    "androidNavigationBar": {
+      "visible": "immersive"
     },
     "web": {
       "favicon": "./assets/favicon.png"

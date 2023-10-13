@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar'
-import { BackHandler, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { BackHandler, Image, ImageBackground, Modal, StyleSheet, Text, View } from 'react-native'
 import * as ScreenOrientation from 'expo-screen-orientation'
 
 import { useNavigation } from '@react-navigation/native'
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 import { BlurView } from 'expo-blur'
 
@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { companyData as companies } from '../data/companies'
 import { STORAGE_KEY } from '../store/constant'
 import { resourceMapping } from '../data/resourceMapping'
+import { AppContext } from '../store'
 
 const styles = StyleSheet.create({
   container: {
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 })
+const DEV = true
 
 export default function Horizon() {
   const navigation = useNavigation()
@@ -57,6 +59,26 @@ export default function Horizon() {
     return () => backHandler.remove()
   }, [])
 
+  const [modal, setModal] = useState('')
+  const context = useContext(AppContext)
+  useEffect(() => {
+    console.log('horizon context', context)
+    if (!context.state.connected)
+      setModal('Socket连接已断开，请重启应用，或者检查服务器')
+
+    else
+      setModal('')
+
+    if (context.state.err)
+      setModal(context.state.err)
+
+    if (context.state.config) {
+      context.state.config.direction === '横向'
+        ? navigation.navigate('Horizon')
+        : navigation.navigate('Vertical')
+    }
+  }, [context.state])
+
   function handleAutoplay() {
     if (!video)
       return
@@ -70,12 +92,12 @@ export default function Horizon() {
         <BlurView intensity={20} style={{ flex: 1 }}>
           {
             com && (
-              <View style={{ flex: 1, padding: '5%' }}>
+              <View style={{ flex: 1, padding: 30 }}>
                 <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 120, marginBottom: 4, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
                   <Text style={[styles.textBold, { fontSize: 20, textShadowRadius: 4, textShadowColor: '#fff' }]}>{com.company}</Text>
                 </View>
                 <ImageBackground source={require('../assets/bg/h-border.png')} resizeMode='contain' style={{ flex: 1 }}>
-                  <View style={{ flex: 1, paddingVertical: '5%', paddingHorizontal: '15%' }}>
+                  <View style={{ flex: 1, paddingVertical: '5%', paddingHorizontal: '12%' }}>
                     {/* media video */}
                     <View style={{ flex: 1 }}>
                       <Video
@@ -98,6 +120,23 @@ export default function Horizon() {
         <Image source={require('../assets/bg/corner.png')} style={{ position: 'absolute', width: 100, height: 100, left: 0, top: 0, transform: [{ rotate: '90deg' }] }}></Image>
         <Image source={require('../assets/bg/corner.png')} style={{ position: 'absolute', width: 100, height: 100, right: 0, bottom: 0, transform: [{ rotate: '-90deg' }] }}></Image>
         <Image source={require('../assets/bg/corner.png')} style={{ position: 'absolute', width: 100, height: 100, right: 0, top: 0, transform: [{ rotate: '-180deg' }] }}></Image>
+        {/* 弹框 */}
+        {
+          !DEV && (
+            <Modal animationType='slide' transparent={true} visible={!!modal}>
+              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <View style={{ borderRadius: 4, overflow: 'hidden' }}>
+                  <BlurView
+                    intensity={80}
+                    tint='light'
+                    style={{ paddingHorizontal: 20, paddingVertical: 40 }}>
+                    <Text style={[styles.textBold, { color: '#ef4444' }]}>{modal}</Text>
+                  </BlurView>
+                </View>
+              </View>
+            </Modal>
+          )
+        }
       </View>
       <StatusBar style='auto' hidden></StatusBar>
     </ImageBackground>

@@ -1,16 +1,21 @@
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
-import { useCallback } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // 自定义字体
+import { io } from 'socket.io-client'
+import { SOCKET_URL, STORAGE_KEY, theme } from './store/constant'
 import { setCustomText } from './utils'
 
 import SelectScreen from './screens/SelectScreen'
 import Horizon from './screens/Horizon'
 import Vertical from './screens/Vertical'
+
+import { AppContext } from './store'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -29,28 +34,77 @@ export default function App() {
     }
   }, [fontsLoaded, fontError])
 
+  const [state, setState] = useState({
+    theme: theme.DEFAULT,
+    config: null,
+    connected: false,
+    err: null,
+  })
+
+  const socket = useRef()
+
+  useEffect(() => {
+    AsyncStorage.getItem(STORAGE_KEY).then((res) => {
+      if (res) {
+        console.log('res', JSON.parse(res))
+        setState({ ...state, config: JSON.parse(res) })
+      }
+    })
+    socket.current = io(SOCKET_URL, {
+      timeout: 5000,
+    })
+
+    return () => {
+      socket.current.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    socket.current.on('error', (err) => {
+      console.log('socket 连接失败', err)
+      setState({ ...state, err: 'socket 连接出现错误' })
+    })
+    socket.current.on('connect', () => {
+      console.log('socket 连接成功')
+      console.log('state', state)
+      setState({ ...state, connected: true })
+    })
+    socket.current.on('disconnect', () => {
+      console.log('socket 连接断开')
+      setState({ ...state, connected: false })
+    })
+    socket.current.on('server', (res) => {
+      setState({ ...state, theme: res })
+    })
+    return () => {
+      socket.current.off()
+    }
+  }, [state])
+
   if (!fontsLoaded && !fontError)
     return null
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerShown: false,
-        animationTypeForReplace: 'push',
-        animation: 'slide_from_right',
-      }}>
-        <Stack.Screen name="Root" options={{
-          animationEnable: false,
+    <AppContext.Provider value={{ state, setGlobalContext: setState }}>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+          headerShown: false,
+          animationTypeForReplace: 'push',
+          animation: 'slide_from_right',
         }}>
-          {() => <SelectScreen onLayoutRootView={onLayoutRootView} />}
-        </Stack.Screen>
-        <Stack.Screen name="Horizon" >
-          {() => <Horizon />}
-        </Stack.Screen>
-        <Stack.Screen name="Vertical" >
-          {() => <Vertical />}
-        </Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
+          <Stack.Screen name="Root" options={{
+            animationEnable: false,
+          }}>
+            {() => <SelectScreen onLayoutRootView={onLayoutRootView} />}
+          </Stack.Screen>
+          <Stack.Screen name="Horizon" >
+            {() => <Horizon />}
+          </Stack.Screen>
+          <Stack.Screen name="Vertical" >
+            {() => <Vertical />}
+          </Stack.Screen>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </AppContext.Provider>
   )
 }

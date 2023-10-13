@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { BackHandler, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { BackHandler, Image, ImageBackground, Modal, ScrollView, StyleSheet, Text, View } from 'react-native'
 import * as ScreenOrientation from 'expo-screen-orientation'
 import { BlurView } from 'expo-blur'
 
@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 
 import { LinearGradient } from 'expo-linear-gradient'
 
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import PagerView from 'react-native-pager-view'
@@ -15,6 +15,7 @@ import { ResizeMode, Video } from 'expo-av'
 import { STORAGE_KEY } from '../store/constant'
 import { companyData as companies } from '../data/companies'
 import { resourceMapping } from '../data/resourceMapping'
+import { AppContext } from '../store'
 
 const styles = StyleSheet.create({
   container: {
@@ -27,6 +28,8 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 })
+
+const DEV = true
 
 export default function Vertical() {
   const navigation = useNavigation()
@@ -64,6 +67,25 @@ export default function Vertical() {
     video.current.playAsync()
   }
 
+  const [modal, setModal] = useState('')
+  const context = useContext(AppContext)
+  useEffect(() => {
+    // console.log('context', context)
+    if (!context.state.connected)
+      setModal('Socket连接已断开，请重启应用，或者检查服务器')
+    else
+      setModal('')
+
+    if (context.state.err)
+      setModal(context.state.err)
+
+    if (context.state.config) {
+      context.state.config.direction === '横向'
+        ? navigation.navigate('Horizon')
+        : navigation.navigate('Vertical')
+    }
+  }, [context.state])
+
   return (
     <ImageBackground source={require('../assets/bg/vertical-bg.png')} resizeMode='cover' style={styles.container}>
       {
@@ -72,7 +94,7 @@ export default function Vertical() {
             <BlurView intensity={20} style={{ flex: 1 }}>
               <View style={{ flex: 1, paddingVertical: '10%', paddingHorizontal: '2%' }}>
                 <View style={{ flex: 1 }}>
-                  <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 82, marginBottom: 4, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
+                  <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 82, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
                     <Text style={[styles.textBold, { fontSize: 20, textShadowRadius: 4, textShadowColor: '#fff' }]}>{com.company}</Text>
                   </View>
                   <ImageBackground source={require('../assets/bg/v-border.png')} resizeMode='contain' style={{ flex: 1, paddingVertical: '6%', paddingLeft: '13%', paddingRight: '8%' }}>
@@ -87,11 +109,29 @@ export default function Vertical() {
                           <View style={{ flex: 1, borderRadius: 4, overflow: 'hidden' }}>
                             <Image source={resourceMapping[com.product[0].src]} resizeMode='cover' style={{ width: '100%', height: '100%' }}></Image>
                           </View >
+                          {
+                            com.product[0].name && (
+                              <View style={{ position: 'absolute', bottom: 1, right: 1, borderBottomEndRadius: 4, width: '100%', overflow: 'hidden' }}>
+                                <BlurView intensity={50} tint='dark' style={{ flex: 1, paddingHorizontal: 10, paddingVertical: 5 }}>
+                                  <Text style={{ textAlign: 'center', fontSize: 11 }}>{com.product[0].name}</Text>
+                                </BlurView>
+                              </View>
+                            )
+                          }
                         </LinearGradient>
                         <LinearGradient colors={['#D8D8D8aa', 'transparent', '#D8D8D8aa']} style={{ flex: 1, aspectRatio: 1, padding: 1, borderRadius: 5, overflow: 'hidden' }}>
                           <View style={{ flex: 1, borderRadius: 4, overflow: 'hidden' }}>
                             <Image source={resourceMapping[com.product[1].src]} resizeMode='cover' style={{ width: '100%', height: '100%' }}></Image>
                           </View>
+                          {
+                            com.product[1].name && (
+                              <View style={{ position: 'absolute', bottom: 1, right: 1, borderBottomEndRadius: 4, width: '100%', overflow: 'hidden' }}>
+                                <BlurView intensity={50} tint='dark' style={{ flex: 1, paddingHorizontal: 10, paddingVertical: 5 }}>
+                                  <Text style={{ textAlign: 'center', fontSize: 11 }}>{com.product[1].name}</Text>
+                                </BlurView>
+                              </View>
+                            )
+                          }
                         </LinearGradient>
                         <View style={{ flex: 1, aspectRatio: 1, padding: 1, borderRadius: 5, overflow: 'hidden' }}>
                           {/* 产品标题 */}
@@ -160,6 +200,23 @@ export default function Vertical() {
             <Image source={require('../assets/bg/corner.png')} style={{ position: 'absolute', width: 100, height: 100, right: 0, bottom: 0, transform: [{ rotate: '-90deg' }] }}></Image>
             <Image source={require('../assets/bg/corner.png')} style={{ position: 'absolute', width: 100, height: 100, right: 0, top: 0, transform: [{ rotate: '-180deg' }] }}></Image>
           </View>
+        )
+      }
+      {/* 弹框 */}
+      {
+        !DEV && (
+          <Modal animationType='slide' transparent={true} visible={!!modal}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+              <View style={{ borderRadius: 4, overflow: 'hidden' }}>
+                <BlurView
+                  intensity={80}
+                  tint='light'
+                  style={{ paddingHorizontal: 20, paddingVertical: 40 }}>
+                  <Text style={[styles.textBold, { color: '#ef4444' }]}>{modal}</Text>
+                </BlurView>
+              </View>
+            </View>
+          </Modal>
         )
       }
       <StatusBar style='auto' hidden></StatusBar>
