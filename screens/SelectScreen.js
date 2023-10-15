@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 const verticalCom = companies.filter(item => item.type === 'vertical')
 const horizonCom = companies.filter(item => item.type === 'horizon')
 
-const DEV = true
+const DEV = false
 
 export default function SelectScreen(props) {
   const navigation = useNavigation()
@@ -98,7 +98,7 @@ export default function SelectScreen(props) {
       direction === '横向'
         ? navigation.navigate('Horizon')
         : navigation.navigate('Vertical')
-      context.setGlobalContext({ ...context, config: { screenName, direction } })
+      context.setGlobalContext({ ...(context.state), config: { screenName, direction } })
       setTest(false)
     }
     catch (e) {

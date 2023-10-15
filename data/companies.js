@@ -46,7 +46,7 @@ export const companyData = [
     mediaType: 'video',
     src: '/xunqian/video.mp4',
     type: 'vertical',
-    product: [{ name: '虚拟数字人人格塑造', src: '/xunqian/s-1.png' }, { name: '大语言模型驱动的元宇宙世界', src: '/xunqian/s-2.png' }],
+    product: [{ name: '虚拟数字人人格塑造', src: '/xunqian/s-1.png' }, { name: '大语言模型驱动\n的元宇宙世界', src: '/xunqian/s-2.png' }],
     productName: '大语言模型驱动的元宇宙世界',
     productIntro: '大语言模型发展推动AI智能体由工具变为深度人格伙伴。“多元宇宙人格工坊”旨打造专属人格智能体平台，增强AI交互能力。通过为智能体创设元宇宙空间，实现虚拟世界中的“生活”体验和成长空间，模拟真实世界环境。',
     companyIntro: '杭州谦贞数字科技有限公司专注于利用先进大语言模型技术开发元宇宙世界。公司旨在创建一智能体生成系统，能利用大语言模型产出多种人格的虚拟智能体，这些智能体能自学、适应环境，模拟人类思维、情感和行为。再通过AI驱动的元宇宙，构建“数字孪生+虚拟分身”的应用场景，在真正意义上实现元宇宙世界单元。',

@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // 自定义字体
 import { io } from 'socket.io-client'
-import { SOCKET_URL, STORAGE_KEY, theme } from './store/constant'
+import { SOCKET_URL, STORAGE_KEY, Theme } from './store/constant'
 import { setCustomText } from './utils'
 
 import SelectScreen from './screens/SelectScreen'
@@ -35,7 +35,7 @@ export default function App() {
   }, [fontsLoaded, fontError])
 
   const [state, setState] = useState({
-    theme: theme.DEFAULT,
+    theme: Theme.DEFAULT,
     config: null,
     connected: false,
     err: null,
