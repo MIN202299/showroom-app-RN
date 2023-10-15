@@ -23,7 +23,6 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-
       "package": "com.dcwjoy.showroomapp"
     },
     "androidNavigationBar": {
@@ -42,7 +41,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "27c00a7a-d9c0-4239-b33d-b06e06e93000"
+        "projectId": "012f959c-f321-4bfe-b1cd-1c5785125957"
       }
     },
     "runtimeVersion": {
