@@ -13,7 +13,7 @@ import { useNavigation } from '@react-navigation/native'
 import { BlurView } from 'expo-blur'
 
 // 常量
-import { STORAGE_KEY } from '../store/constant'
+import { SOCKET_URL, STORAGE_KEY } from '../store/constant'
 
 import { padding } from '../utils'
 
@@ -211,6 +211,9 @@ export default function SelectScreen(props) {
         }
 
         <StatusBar style='auto' hidden></StatusBar>
+      </View>
+      <View style={{ position: 'absolute', top: 0, left: 0, width: '100%' }}>
+        <Text style={[styles.textBold, { color: '#fff' }]}>{SOCKET_URL}</Text>
       </View>
     </ImageBackground>
   )
