@@ -24,7 +24,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.dcwjoy.showroomapp",
-      "permissions": ["android.permission.INTERNET"]
+      "permissions": ["android.permission.INTERNET", "android.permission.ACCESS_WIFI_STATE"]
 
     },
     "androidNavigationBar": {
