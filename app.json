@@ -23,7 +23,9 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.dcwjoy.showroomapp"
+      "package": "com.dcwjoy.showroomapp",
+      "permissions": ["android.permission.INTERNET"]
+
     },
     "androidNavigationBar": {
       "visible": "immersive"

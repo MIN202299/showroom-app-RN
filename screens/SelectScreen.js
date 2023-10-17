@@ -54,6 +54,7 @@ export default function SelectScreen(props) {
   const [test, setTest] = useState(true)
   const context = useContext(AppContext)
   const [modal, setModal] = useState('')
+  const [testT, setTestT] = useState('')
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -61,6 +62,21 @@ export default function SelectScreen(props) {
       ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.DEFAULT)
       setTest(true)
     })
+    fetch('http://192.168.2.119:8421/setTheme', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        theme: '1',
+      }),
+    }).then((res) => {
+      return res.text()
+    }).then((res) => {
+      console.log('ress', res)
+      setTestT(res)
+    })
+
     return unsubscribe
   }, [])
 
@@ -213,7 +229,7 @@ export default function SelectScreen(props) {
         <StatusBar style='auto' hidden></StatusBar>
       </View>
       <View style={{ position: 'absolute', top: 0, left: 0, width: '100%' }}>
-        <Text style={[styles.textBold, { color: '#fff' }]}>{SOCKET_URL}</Text>
+        <Text style={[styles.textBold, { color: '#fff' }]}>{SOCKET_URL + testT}</Text>
       </View>
     </ImageBackground>
   )

@@ -51,7 +51,8 @@ export default function App() {
       }
     })
     socket.current = io(SOCKET_URL, {
-      timeout: 5000,
+      timeout: 10000,
+      transports: ['websocket'],
     })
 
     return () => {
