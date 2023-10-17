@@ -46,14 +46,22 @@ export default function App() {
   useEffect(() => {
     AsyncStorage.getItem(STORAGE_KEY).then((res) => {
       if (res) {
-        console.log('res', JSON.parse(res))
+        console.log('MIN App.js get Storage', JSON.parse(res))
         setState({ ...state, config: JSON.parse(res) })
       }
+      else {
+        console.log('MIN App.js get Storage, storage is none')
+      }
     })
+      .catch((err) => {
+        console.log(' MIN App.js get storage error', err)
+      })
     socket.current = io(SOCKET_URL, {
       timeout: 10000,
       transports: ['websocket'],
     })
+
+    console.log('MIN APP.js mounted', socket)
 
     return () => {
       socket.current.disconnect()
@@ -62,7 +70,7 @@ export default function App() {
 
   useEffect(() => {
     socket.current.on('error', (err) => {
-      console.log('socket 连接失败', err)
+      console.log('App.js socket 连接失败', err)
       setState({ ...state, err: 'socket 连接出现错误' })
     })
     socket.current.on('connect', () => {
@@ -77,6 +85,9 @@ export default function App() {
     socket.current.on('server', (res) => {
       setState({ ...state, theme: res })
     })
+
+    console.log('MIN App.js socket', socket)
+
     return () => {
       socket.current.off()
     }

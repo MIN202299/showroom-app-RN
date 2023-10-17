@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar'
 import { ImageBackground, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import * as ScreenOrientation from 'expo-screen-orientation'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
+import { io } from 'socket.io-client'
 
 // 使用本地存储
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -62,7 +63,7 @@ export default function SelectScreen(props) {
       ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.DEFAULT)
       setTest(true)
     })
-    fetch('http://192.168.2.119:8421/setTheme', {
+    fetch('http://18.166.32.15:8421/setTheme', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -73,12 +74,64 @@ export default function SelectScreen(props) {
     }).then((res) => {
       return res.text()
     }).then((res) => {
-      console.log('ress', res)
+      console.log('res app fetch', res)
       setTestT(res)
+    }).catch((err) => {
+      console.log('MIN SelectScreen.js fetch error', err)
     })
 
     return unsubscribe
   }, [])
+  const socket = useRef()
+
+  useEffect(() => {
+    AsyncStorage.getItem(STORAGE_KEY).then((res) => {
+      if (res)
+        console.log('MIN SelectScreen.js Storage', JSON.parse(res))
+        // context.setGlobalContext({ ...context.state, config: JSON.parse(res) })
+
+      else
+        console.log('MIN SelectScreen.js get Storage, storage is none')
+    })
+      .catch((err) => {
+        console.log(' MIN SelectScreen.js storage error', err)
+      })
+    socket.current = io(SOCKET_URL, {
+      timeout: 10000,
+      transports: ['websocket'],
+    })
+
+    console.log('MIN SelectScreen.js mounted', socket)
+
+    return () => {
+      socket.current.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    socket.current.on('error', (err) => {
+      console.log('SelectScreen.js socket 连接失败', err)
+      context.setGlobalContext({ ...context.state, err: 'socket 连接出现错误' })
+    })
+    socket.current.on('connect', () => {
+      console.log('MIN SelectScreen.js socket 连接成功')
+      console.log('MIN SelectScreen.js state', context.state)
+      context.setGlobalContext({ ...context.state, connected: true })
+    })
+    socket.current.on('disconnect', () => {
+      console.log('socket 连接断开')
+      context.setGlobalContext({ ...context.state, connected: false })
+    })
+    socket.current.on('server', (res) => {
+      context.setGlobalContext({ ...context.state, theme: res })
+    })
+
+    console.log('MIN SelectScreen.js socket', socket)
+
+    return () => {
+      socket.current.off()
+    }
+  }, [context.state])
 
   useEffect(() => {
     console.log('context', context)
