@@ -63,14 +63,8 @@ export default function SelectScreen(props) {
       ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.DEFAULT)
       setTest(true)
     })
-    fetch('https://18.166.32.15:8421/setTheme', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        theme: '1',
-      }),
+    fetch('https://dcwjoy.com/api', {
+      method: 'GET',
     }).then((res) => {
       return res.text()
     }).then((res) => {
