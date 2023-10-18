@@ -63,7 +63,7 @@ export default function SelectScreen(props) {
       ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.DEFAULT)
       setTest(true)
     })
-    fetch('http://18.166.32.15:8421/setTheme', {
+    fetch('https://18.166.32.15:8421/setTheme', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
