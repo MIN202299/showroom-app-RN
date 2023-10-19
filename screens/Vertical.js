@@ -106,7 +106,17 @@ export default function Vertical() {
           <BlurView intensity={20} style={{ flex: 1 }}>
             <View style={{ flex: 1, paddingVertical: '10%', paddingHorizontal: '2%' }}>
               <View style={{ flex: 1 }}>
-                <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 82, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
+                <View style={{
+                  alignSelf: 'flex-start',
+                  paddingBottom: 3,
+                  marginLeft: 82,
+                  borderBottomWidth: 4,
+                  borderStyle: 'dotted',
+                  borderBottomColor: '#fff',
+                  position: 'absolute',
+                  top: 35,
+                  left: 10,
+                }}>
                   <Text style={[styles.textBold, { fontSize: 20, textShadowRadius: 4, textShadowColor: '#fff' }]}>
                     {
                       (context.state.theme === Theme.COMPANY_INTRO && com)
@@ -117,7 +127,7 @@ export default function Vertical() {
                 </View>
                 <ImageBackground source={require('../assets/bg/v-border.png')}
                   resizeMode='contain'
-                  style={{ flex: 1, paddingVertical: '6%', paddingLeft: '13%', paddingRight: '8%' }}>
+                  style={{ flex: 1, paddingVertical: '15%', paddingLeft: '13%', paddingRight: '8%' }}>
                   <View style={{ flex: 1, paddingBottom: 10 }}>
                     {/* 产品标题 */}
                     <View style={{ marginLeft: 14 }}>
@@ -275,7 +285,7 @@ export default function Vertical() {
                       }
                     </View>
                     {/* 公司介绍 */}
-                    <View style={{ height: 200, borderWidth: 1, borderColor: '#D8D8D8aa', padding: 10, borderRadius: 5 }}>
+                    <View style={{ height: 200, borderWidth: 1, borderColor: '#D8D8D8aa', padding: 10, borderRadius: 5, marginBottom: 5 }}>
                       <View style={{ marginBottom: 4 }}>
                         <Text style={[styles.textBold, { fontSize: 16 }]}>{
                           (context.state.theme === Theme.COMPANY_INTRO && com)
@@ -301,7 +311,7 @@ export default function Vertical() {
           <Image source={require('../assets/bg/corner.png')} style={{ position: 'absolute', width: 100, height: 100, right: 0, top: 0, transform: [{ rotate: '-180deg' }] }}></Image>
           {/* logo */}
           {
-            <View style={{ position: 'absolute', top: 0, left: 0, height: 80, width: 100 }}>
+            <View style={{ position: 'absolute', top: 15, left: 15, height: 100, width: 120 }}>
               <ImageBackground source={require('../assets/bg/logo-bg.png')} resizeMode='contain' style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
                 <Image source={
                   (context.state.theme === Theme.COMPANY_INTRO && com)
@@ -379,7 +389,7 @@ export default function Vertical() {
     }
   }
   return (
-    <ImageBackground source={require('../assets/bg/vertical-bg.png')} resizeMode='cover' style={styles.container}>
+    <ImageBackground source={require('../assets/bg/vertical-bg.png')} resizeMode='cover' style={[styles.container]}>
       {
         getView(context.state.theme)
       }

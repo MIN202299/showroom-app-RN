@@ -169,13 +169,13 @@ export default function Horizon() {
               (context.state.theme === Theme.COMPANY_INTRO && com)
                 ? (
                   <View style={{ flex: 1, padding: 30 }}>
-                    <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 120, marginBottom: 4, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
+                    <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 200, marginBottom: 0, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
                       <Text style={[styles.textBold, { fontSize: 20, textShadowRadius: 4, textShadowColor: '#fff' }]}>{com.company}</Text>
                     </View>
                     <ImageBackground source={require('../assets/bg/h-border.png')} resizeMode='contain' style={{ flex: 1 }}>
-                      <View style={{ flex: 1, paddingVertical: '5%', paddingHorizontal: '12%' }}>
+                      <View style={{ flex: 1, paddingVertical: '5%', paddingHorizontal: '15%' }}>
                         {/* media video */}
-                        <View style={{ flex: 1 }}>
+                        <View style={{ flex: 1, overflow: 'hidden' }}>
                           <Video
                             ref={video}
                             source={resourceMapping[com.src]}
@@ -191,7 +191,7 @@ export default function Horizon() {
                 )
                 : (
                   <View style={{ flex: 1, padding: 30 }}>
-                    <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 120, marginBottom: 4, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
+                    <View style={{ alignSelf: 'flex-start', paddingBottom: 3, marginLeft: 200, marginBottom: 0, borderBottomWidth: 4, borderStyle: 'dotted', borderBottomColor: '#fff' }}>
                       <Text style={[styles.textBold, { fontSize: 20, textShadowRadius: 4, textShadowColor: '#fff' }]}>{dropleton[0].company}</Text>
                     </View>
                     <ImageBackground source={require('../assets/bg/h-border.png')} resizeMode='contain' style={{ flex: 1 }}>
