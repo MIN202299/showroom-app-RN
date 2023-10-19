@@ -1,6 +1,6 @@
 export const STORAGE_KEY = 'showroom-storage'
 
-export const SOCKET_URL = 'https://dcwjoy.com'
+export const SOCKET_URL = 'http://dropletonverse.com'
 
 export const Theme = {
   DEFAULT: '0',
