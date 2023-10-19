@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // 自定义字体
 import { io } from 'socket.io-client'
+import { Keyboard } from 'react-native'
 import { SOCKET_URL, STORAGE_KEY, Theme } from './store/constant'
 import { setCustomText } from './utils'
 
@@ -53,7 +54,8 @@ export default function App() {
     socket.current = io(SOCKET_URL, {
       timeout: 5000,
     })
-
+    // 隐藏虚拟键盘
+    Keyboard.dismiss()
     return () => {
       socket.current.disconnect()
     }
