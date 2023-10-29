@@ -1,7 +1,9 @@
 # 自动生成resource mapping
 import json
+import os
 
-with open('./companies.json', 'r', encoding='utf-8') as f:
+c = os.path.abspath('.')
+with open(os.path.join(c, 'data/companies.json'), 'r', encoding='utf-8') as f:
   companies = json.load(f)
 
 # print(companies)
@@ -27,6 +29,6 @@ for com in companies:
     data[com['logo']] = f'require(\'../assets/companies{com["logo"]}\')'
 
 
-with open('./resourceMapping.json', 'w', encoding='utf-8') as f:
+with open(os.path.join(c, 'data/resourceMapping.json'), 'w', encoding='utf-8') as f:
   json.dump(data, f, ensure_ascii=False, indent=2)
 # print(data)

@@ -162,6 +162,146 @@
     "productName": "轻松创建元宇宙",
     "productIntro": "AIGC＋轻量级的引擎技术提供充满无限可能的元宇宙世界工具",
     "companyIntro": "我们专注于开发基于先进人工智能图形渲染技术的引擎，类似于未来的＂乐高公司＂。我们已经构建了一个开放且轻便的元宇宙应用社区，提供了预设系统、空间模板和简易编辑器，让人们以个性化的方式探索和体验元宇宙的美学生活方式。我们的引擎还支持创新的AIGC技术，能够生成超写实的数字人、2D交互数字人（角色）、物品、道具、图片、视频、空间和场景等多种元素，为每个人打造独一无二的元宇宙体验。我们的目标是提供给用户一个令人兴奋和无限可能的元宇宙世界。"
+  },
+  {
+    "screenName": "屏幕一",
+    "company": " 杭州链城数字科技有限公司",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/h/2/01.jpg",
+      "/liancheng/h/2/02.jpg",
+      "/liancheng/h/2/03.jpg",
+      "/liancheng/h/2/04.jpg"
+    ],
+    "type": "horizon"
+  },
+  {
+    "company": "链城数科-三大核心业务解决方案",
+    "screenName": "屏幕二",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/h/4/01.jpg",
+      "/liancheng/h/4/02.jpg",
+      "/liancheng/h/4/03.jpg",
+      "/liancheng/h/4/04.jpg",
+      "/liancheng/h/4/05.jpg",
+      "/liancheng/h/4/06.jpg",
+      "/liancheng/h/4/07.jpg",
+      "/liancheng/h/4/08.jpg",
+      "/liancheng/h/4/09.jpg"
+    ],
+    "type": "horizon"
+  },
+  {
+    "company": "链城数科-核心成员",
+    "screenName": "屏幕三",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/h/7/01.jpg",
+      "/liancheng/h/7/02.jpg",
+      "/liancheng/h/7/03.jpg"
+    ],
+    "type": "horizon"
+  },
+  {
+    "company": "链城数科-展望未来",
+    "screenName": "屏幕四",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/h/8/01.jpg",
+      "/liancheng/h/8/02.jpg",
+      "/liancheng/h/8/03.jpg"
+    ],
+    "type": "horizon"
+  },
+  {
+    "screenName": "屏幕五",
+    "company": "企业介绍",
+    "logo": "/liancheng/logo.png",
+    "mediaType": "video",
+    "src": "/liancheng/v/1/lower.mp4",
+    "type": "vertical",
+    "product": [
+      { "name": "核心建设", "src": "/liancheng/v/1/01.jpg" },
+      { "name": "核心平台", "src": "/liancheng/v/1/02.jpg" }
+    ],
+    "productName": "1+3+N 价值互联网生态",
+    "productIntro": "1:以覆盖全国 30 个省市公信力机构的联盟区块链平台“信证链”为底层基础设施\n3:面向数据要素市场化、数据产权的重大国家战略，形成数据证据化、数据资产化和数据可信安全共享三大核心解决方案\nN:多元应用场景落地",
+    "companyIntro": "在国家数据要素及其市场化配置改革战略的指引下， 链城数科从政府合作、产业创新、高校协作、规划研究和生态应用五个方面， 进行“区块链应用+生态圈建设”，构建 1+3+N 价值互联网生态，结合区块链、隐私计算、大 数据等技术，为降低信任成本，释放发掘数据要素价值，提供技术平台、解决方案和运营服务。"
+  },
+  {
+    "screenName": "屏幕六",
+    "company": "链城数科 核心平台-信证链",
+    "logo": "/liancheng/logo.png",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/v/3/03.jpg",
+      "/liancheng/v/3/04.jpg",
+      "/liancheng/v/3/05.jpg",
+      "/liancheng/v/3/06.jpg",
+      "/liancheng/v/3/07.jpg",
+      "/liancheng/v/3/08.jpg",
+      "/liancheng/v/3/09.jpg"
+    ],
+    "type": "vertical",
+    "product": [
+      { "name": "核心平台", "src": "/liancheng/v/3/01.jpg" },
+      { "name": "信证链助手", "src": "/liancheng/v/3/02.jpg" }
+    ],
+    "productName": "信证链 核心优势",
+    "productIntro": "具备公信力的权威联盟链 \n· 价值互联网可信基础设施 \n· 多场景链上链下信任协同 \n· 国产自主可控区块链底层",
+    "companyIntro": "信证链 是全国首个也是规模最大运营级公信联盟区块链平台，是符合国家战略安全规划的区块 链核心技术平台，已链接全国范围三十个省级行政区三十余家公信力机构。信证链 目标是成为可信、安全、高效的分布式数据协作生态设施，实现电子数据证据化和数字 资产可信确权流转。信证链 将“筑链成网”，实现全国丰富场景数据协同，成为可信数字社会的基础设施和可信数 字资产流通基础设施，有力支撑更高层次的各类社会场景中需要完善信任机制的创新应用。"
+  },
+  {
+    "screenName": "屏幕七",
+    "company": "链城数科-战略咨询与研究成果",
+    "logo": "/liancheng/logo.png",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/v/5/03.jpg",
+      "/liancheng/v/5/04.jpg",
+      "/liancheng/v/5/05.jpg",
+      "/liancheng/v/5/06.jpg",
+      "/liancheng/v/5/07.jpg",
+      "/liancheng/v/5/08.jpg",
+      "/liancheng/v/5/09.jpg",
+      "/liancheng/v/5/10.jpg",
+      "/liancheng/v/5/11.jpg"
+    ],
+    "type": "vertical",
+    "product": [
+      { "name": "《区块链+社会治理》", "src": "/liancheng/v/5/01.jpg" },
+      { "name": "《发现中国区块链创新应用》", "src": "/liancheng/v/5/03.jpg" }
+    ],
+    "productName": "国内一流区块链咨询品牌",
+    "productIntro": "依托产学研用一体化平台，链城数科具备区块链领域国家级战略规划和区域级应用与产业发展 规划的研究制订及其指导下的应用场景设计能力、标准规范编制能力和各级各类区块链专项课 题研究能力。\n公司面向区块链领域技术应用、产业发展、标准规范等方向，提供视角前瞻、理念先进、系统 谋划、落地可行的咨询研究服务，编制形成白皮书、研究报告、总体规划及标准规范。",
+    "companyIntro": "未来，链城数科将持续发挥“国内一流区块链咨询品牌”的影响力， 发挥浙江大学、复旦大学及宁波标准区块链产业发展研究院人才优势， 在国家“信息创新国产化”战略指引下， 从政府合作、产业创新、高校协作、规划研究和生态应用五方面进行“区块链应用+生态圈建设”， 不断深度挖掘与拓展区块链在数字经济、数字社会和数字政府等方面典型应用场景， 在数字中国的建设大潮中创造应有的价值。"
+  },
+  {
+    "screenName": "屏幕八",
+    "company": "链城数科-合作伙伴",
+    "logo": "/liancheng/logo.png",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/v/6/03.jpg",
+      "/liancheng/v/6/04.jpg",
+      "/liancheng/v/6/05.jpg",
+      "/liancheng/v/6/06.jpg",
+      "/liancheng/v/6/07.jpg",
+      "/liancheng/v/6/08.jpg",
+      "/liancheng/v/6/09.jpg",
+      "/liancheng/v/6/10.jpg",
+      "/liancheng/v/6/11.jpg",
+      "/liancheng/v/6/12.jpg"
+    ],
+    "type": "vertical",
+    "product": [
+      { "name": "与江苏省大数据管理中心签署战略合作协议", "src": "/liancheng/v/6/01.jpg" },
+      { "name": "第一届中国信证联盟论坛日", "src": "/liancheng/v/6/02.jpg" }
+    ],
+    "productName": "链城数科-价值观",
+    "productIntro": "专业素养，自驱担当\n创新致优，高效协作\n贴近用户，服务社会",
+    "companyIntro": "链城数字科技有限公司积极拓展市场，与多级部委、各省市优秀企业形成战略合作， 如江苏省大数据管理中心、金电信科、浙江市监司法鉴定中心等， 同时承办了公安部第十届警博会 、2023 全球数据合规年度论坛等行业活动， 构建可信、安全、高效的价值互联网联盟生态圈，为信证链服务能力提升和信证联盟生态巩固打下坚实基础。"
   }
 
 ]
