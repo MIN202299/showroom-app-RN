@@ -17,7 +17,6 @@ import { SOCKET_URL, STORAGE_KEY } from '../store/constant'
 
 import { padding } from '../utils'
 
-import { companyData as companies } from '../data/companies'
 import { AppContext } from '../store'
 
 const styles = StyleSheet.create({
@@ -39,8 +38,18 @@ const styles = StyleSheet.create({
   },
 })
 
-const verticalCom = companies.filter(item => item.type === 'vertical')
-const horizonCom = companies.filter(item => item.type === 'horizon')
+const verticalCom = [
+  '屏幕五',
+  '屏幕六',
+  '屏幕七',
+  '屏幕八',
+]
+const horizonCom = [
+  '屏幕一',
+  '屏幕二',
+  '屏幕三',
+  '屏幕四',
+]
 
 const DEV = false
 
@@ -131,22 +140,22 @@ export default function SelectScreen(props) {
                 : (
                   direction === '横向'
                     ? (
-                      horizonCom.map((com, idx) => (
-                        <TouchableOpacity key={`${idx}`} onPress={() => { setScreenName(com.screenName) }}>
-                          <View style={{ borderRadius: 2, overflow: 'hidden', backgroundColor: com.screenName === screenName ? '#6d28d9' : undefined }} >
-                            <BlurView intensity={com.screenName === screenName ? 10 : 50} tint='light'>
-                              <Text style={{ color: 'white', ...padding(10, 50), fontSize: 20 }}>{com.screenName}</Text>
+                      horizonCom.map((_screenName, idx) => (
+                        <TouchableOpacity key={`${idx}`} onPress={() => { setScreenName(_screenName) }}>
+                          <View style={{ borderRadius: 2, overflow: 'hidden', backgroundColor: _screenName === screenName ? '#6d28d9' : undefined }} >
+                            <BlurView intensity={_screenName === screenName ? 10 : 50} tint='light'>
+                              <Text style={{ color: 'white', ...padding(10, 50), fontSize: 20 }}>{_screenName}</Text>
                             </BlurView>
                           </View>
                         </TouchableOpacity>
                       ))
                     )
                     : (
-                      verticalCom.map((com, idx) => (
-                        <TouchableOpacity key={`${idx}`} onPress={() => { setScreenName(com.screenName) }}>
-                          <View style={{ borderRadius: 2, overflow: 'hidden', backgroundColor: com.screenName === screenName ? '#6d28d9' : undefined }} >
-                            <BlurView intensity={com.screenName === screenName ? 10 : 50} tint='light'>
-                              <Text style={{ color: 'white', ...padding(10, 50), fontSize: 20 }}>{com.screenName}</Text>
+                      verticalCom.map((_screenName, idx) => (
+                        <TouchableOpacity key={`${idx}`} onPress={() => { setScreenName(_screenName) }}>
+                          <View style={{ borderRadius: 2, overflow: 'hidden', backgroundColor: _screenName === screenName ? '#6d28d9' : undefined }} >
+                            <BlurView intensity={_screenName === screenName ? 10 : 50} tint='light'>
+                              <Text style={{ color: 'white', ...padding(10, 50), fontSize: 20 }}>{_screenName}</Text>
                             </BlurView>
                           </View>
                         </TouchableOpacity>

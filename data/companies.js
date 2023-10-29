@@ -97,5 +97,5 @@ export const companyData = [
 //  src: string;
 // }
 // 正则替换
-// "require(.*)"
+// "require\((.*)\)"
 // require($1)

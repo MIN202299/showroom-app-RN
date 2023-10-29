@@ -16,7 +16,6 @@ import { STORAGE_KEY, Theme } from '../store/constant'
 import { companyData as companies } from '../data/companies'
 import { resourceMapping } from '../data/resourceMapping'
 import { AppContext } from '../store'
-import { dropletonData } from '../data/dropleton'
 
 const styles = StyleSheet.create({
   container: {
@@ -35,7 +34,7 @@ const DEV = false
 export default function Vertical() {
   const navigation = useNavigation()
   const [com, setCom] = useState()
-  const [dropleton] = useState(dropletonData)
+  const [dropleton] = useState()
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       // 屏幕锁定横向
