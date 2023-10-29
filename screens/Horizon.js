@@ -50,7 +50,6 @@ export default function Horizon() {
         setScreenName(screenName)
       }
     })
-    console.log(DefaultScreenWords)
     return unsubscribe
   }, [])
 
