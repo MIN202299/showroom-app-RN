@@ -129,7 +129,7 @@ export default function Horizon() {
                           isLooping
                           onLoad={() => { handleAutoplay() }}
                           style={{ flex: 1 }}></Video>)
-                        : (<PagerView style={{ flex: 1, backgroundColor: 'black' }} index={1} initialPage={0}>
+                        : (<PagerView style={{ flex: 1 }} index={1} initialPage={0}>
                           {
                             Array.isArray(screenData.src)
                               ? screenData.src.map((src, idx) => (

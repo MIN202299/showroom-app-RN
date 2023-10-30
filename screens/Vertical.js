@@ -130,14 +130,14 @@ export default function Vertical() {
                 </View>
                 <ImageBackground source={require('../assets/bg/v-border.png')}
                   resizeMode='contain'
-                  style={{ flex: 1, paddingVertical: '15%', paddingLeft: '13%', paddingRight: '8%' }}>
-                  <View style={{ flex: 1, paddingBottom: 10 }}>
+                  style={{ flex: 1, paddingVertical: '15%', paddingLeft: '10%', paddingRight: '8%' }}>
+                  <View style={{ flex: 1, paddingBottom: 10, paddingTop: 40 }}>
                     {/* 产品标题 */}
-                    <View style={{ marginLeft: 14 }}>
+                    <View style={{ marginLeft: 14, marginBottom: 10 }}>
                       <Text style={[styles.textBold, { fontSize: 16 }]}>{screenData.productName}</Text>
                     </View>
                     {/* 产品介绍 */}
-                    <View style={{ flexWrap: 'nowrap', flexDirection: 'row', gap: 10, marginTop: 4 }}>
+                    <View style={{ flexWrap: 'nowrap', flexDirection: 'row', gap: 15, marginTop: 4 }}>
                       <LinearGradient colors={['#D8D8D8aa', 'transparent', '#D8D8D8aa']} style={{ flex: 1, aspectRatio: 1, padding: 1, borderRadius: 5, overflow: 'hidden' }}>
                         <View style={{ flex: 1, borderRadius: 4, overflow: 'hidden' }}>
                           <Image source={resourceMapping[screenData.product[0].src]} resizeMode='cover' style={{ width: '100%', height: '100%' }}></Image>
@@ -180,7 +180,7 @@ export default function Vertical() {
                       </View>
                     </View>
                     {/* 产品介绍 */}
-                    <View style={{ flex: 1, marginVertical: 10, borderWidth: 1, borderColor: '#D8D8D8aa', padding: 10, borderRadius: 5 }}>
+                    <View style={{ flex: 1, marginVertical: 20, borderWidth: 1, borderColor: '#D8D8D8aa', padding: 20, borderRadius: 5 }}>
                       { // swiper
                         (screenData.mediaType === 'video')
                           ? (
@@ -217,7 +217,7 @@ export default function Vertical() {
                       }
                     </View>
                     {/* 公司介绍 */}
-                    <View style={{ height: 200, borderWidth: 1, borderColor: '#D8D8D8aa', padding: 10, borderRadius: 5, marginBottom: 5 }}>
+                    <View style={{ height: 200, borderWidth: 1, borderColor: '#D8D8D8aa', padding: 10, borderRadius: 5, marginBottom: 10 }}>
                       <View style={{ marginBottom: 4 }}>
                         <Text style={[styles.textBold, { fontSize: 16 }]}>{ screenData.company }</Text>
                       </View>

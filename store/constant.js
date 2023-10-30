@@ -1,6 +1,6 @@
 export const STORAGE_KEY = 'showroom-storage'
 
-export const SOCKET_URL = 'http://192.168.3.6:8422'
+export const SOCKET_URL = 'http://192.168.1.75:8422'
 
 export const Theme = {
   DEFAULT: '0',
