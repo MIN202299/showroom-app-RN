@@ -2,8 +2,8 @@ export const companyData = [
   {
     screenName: '屏幕一',
     company: '',
-    mediaType: 'video',
-    src: '',
+    mediaType: 'swipe-image',
+    src: [''],
     type: 'horizon',
   },
   {

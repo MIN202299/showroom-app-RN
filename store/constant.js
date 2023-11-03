@@ -1,6 +1,6 @@
 export const STORAGE_KEY = 'showroom-storage'
 
-export const SOCKET_URL = 'http://192.168.1.75:8422'
+export const SOCKET_URL = 'http://192.168.2.119:8422'
 
 export const Theme = {
   DEFAULT: '0',
@@ -8,6 +8,7 @@ export const Theme = {
   DROPLETON: '2',
   LIAN_Cheng: '3',
   YI_JIU: '4',
+  XING_HUO: '5',
 }
 
 export const DefaultScreenWords = {
