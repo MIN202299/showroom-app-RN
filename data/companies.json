@@ -46,7 +46,7 @@
     "mediaType": "video",
     "src": "/xunqian/video.mp4",
     "type": "vertical",
-    "product": [{ "name": "虚拟数字人人格塑造", "src": "/xunqian/s-1.png" }, { "name": "大语言模型驱动的元宇宙世界", "src": "/xunqian/s-2.png" }],
+    "product": [{ "name": "虚拟数字人人格塑造", "src": "/xunqian/s-1.png" }, { "name": "大语言模型驱动\n的元宇宙世界", "src": "/xunqian/s-2.png" }],
     "productName": "大语言模型驱动的元宇宙世界",
     "productIntro": "大语言模型发展推动AI智能体由工具变为深度人格伙伴。“多元宇宙人格工坊”旨打造专属人格智能体平台，增强AI交互能力。通过为智能体创设元宇宙空间，实现虚拟世界中的“生活”体验和成长空间，模拟真实世界环境。",
     "companyIntro": "杭州谦贞数字科技有限公司专注于利用先进大语言模型技术开发元宇宙世界。公司旨在创建一智能体生成系统，能利用大语言模型产出多种人格的虚拟智能体，这些智能体能自学、适应环境，模拟人类思维、情感和行为。再通过AI驱动的元宇宙，构建“数字孪生+虚拟分身”的应用场景，在真正意义上实现元宇宙世界单元。"
@@ -77,41 +77,41 @@
   },
   {
     "screenName": "屏幕一",
-    "company": "数字人产品介绍",
-    "mediaType": "swipe-image",
-    "src": [
-      "/dropleton/h/6/01.png",
-      "/dropleton/h/6/02.png",
-      "/dropleton/h/6/03.png",
-      "/dropleton/h/6/04.png"
-    ],
-    "type": "horizon"
-  },
-  {
-    "company": "场景智能展厅产品介绍",
-    "screenName": "屏幕二",
-    "mediaType": "swipe-image",
-    "src": [
-      "/dropleton/h/8/01.png",
-      "/dropleton/h/8/02.png"
-    ],
-    "type": "horizon"
-  },
-  {
     "company": "发展历程",
-    "screenName": "屏幕三",
     "mediaType": "swipe-image",
     "src": [
-      "/dropleton/h/02.png"
+      "/dropleton/8screens/H4/01.png"
     ],
     "type": "horizon"
   },
   {
     "company": "业务技术框架",
+    "screenName": "屏幕二",
+    "mediaType": "swipe-image",
+    "src": [
+      "/dropleton/8screens/H4/02.png"
+    ],
+    "type": "horizon"
+  },
+  {
+    "company": "数字人产品介绍",
+    "screenName": "屏幕三",
+    "mediaType": "swipe-image",
+    "src": [
+      "/dropleton/8screens/H4/03.png",
+      "/dropleton/8screens/H4/04.png",
+      "/dropleton/8screens/H4/05.png",
+      "/dropleton/8screens/H4/06.png"
+    ],
+    "type": "horizon"
+  },
+  {
+    "company": "场景智能展厅产品介绍",
     "screenName": "屏幕四",
     "mediaType": "swipe-image",
     "src": [
-      "/dropleton/h/04.png"
+      "/dropleton/8screens/H4/07.png",
+      "/dropleton/8screens/H4/08.png"
     ],
     "type": "horizon"
   },
@@ -120,9 +120,9 @@
     "company": "元形水滴团队介绍",
     "logo": "/dropleton/logo.png",
     "mediaType": "swipe-image",
-    "src": ["/dropleton/v/1/03.png"],
+    "src": ["/dropleton/8screens/V4/S1/03.png"],
     "type": "vertical",
-    "product": [{ "name": "智能原生组织", "src": "/dropleton/v/1/01.png" }, { "name": "团队成员", "src": "/dropleton/v/1/02.png" }],
+    "product": [{ "name": "智能原生组织", "src": "/dropleton/8screens/V4/S1/01.png" }, { "name": "团队成员", "src": "/dropleton/8screens/V4/S1/02.png" }],
     "productName": "",
     "productIntro": "我们是一家AI智能原生驱动的商业组织，我们秉承'AI加速AI'的理念，致力于构建全新的元宇宙应用生产工作流、平台和工具。",
     "companyIntro": "核心团队成员很多来自网易，毕业于英国和美国，同济大学，中国美术学院，南京航天航空大学，南开大学等一流学府，围绕智能原生商业组织在构建全新的工作流，成为品牌的技术伙伴，致力于解决问题，提供创新和帮助他们在智能和互动的时代一起高速成长。"
@@ -132,23 +132,23 @@
     "company": "业务现状和合作伙伴",
     "logo": "/dropleton/logo.png",
     "mediaType": "swipe-image",
-    "src": ["/dropleton/v/3/03.png"],
+    "src": ["/dropleton/8screens/V4/S2/03.png"],
     "type": "vertical",
-    "product": [{ "name": "标准产品", "src": "/dropleton/v/3/01.png" }, { "name": "定制产品", "src": "/dropleton/v/3/02.png" }],
+    "product": [{ "name": "标准产品", "src": "/dropleton/8screens/V4/S2/01.png" }, { "name": "定制产品", "src": "/dropleton/8screens/V4/S2/02.png" }],
     "productName": "",
     "productIntro": "标准版产品通常是企业负责人或某一业务的核心负责人。\n定制版产品，采购决策者可能为企业部门负责人或相关业务负责人。",
-    "companyIntro": "我们的目标是针对不同的目标客户群体根据他们的需求和预算提供相应的解决方案，以满足他们在元宇宙搭建、数字人和 AIGC 工具方面的需求。通过与这些客户的紧密合作，我们将能够实现业务增长和盈利能力的提升，并在市场中建立良好的声誉和竞争优势。"
+    "companyIntro": "标准产品/定制产品\n我们的目标是针对不同的目标客户群体根据他们的需求和预算提供相应的解决方案，以满足他们在元宇宙搭建、数字人和AIGC具方面的需求。通过与这些客户的紧密合作，我们将能够实现业务增长和盈利能力的提升，并在市场中建立良好的声誉和竞争优势。"
   },
   {
     "screenName": "屏幕七",
     "company": "元宇宙空间产品介绍",
     "logo": "/dropleton/logo.png",
     "mediaType": "swipe-image",
-    "src": ["/dropleton/v/5/03.png"],
+    "src": ["/dropleton/8screens/V4/S3/03.png"],
     "type": "vertical",
-    "product": [{ "name": "元形水滴官网", "src": "/dropleton/v/5/01.png" }, { "name": "元宇宙社区", "src": "/dropleton/v/5/02.png" }],
+    "product": [{ "name": "元形水滴官网", "src": "/dropleton/8screens/V4/S3/01.png" }, { "name": "元宇宙社区", "src": "/dropleton/8screens/V4/S3/02.png" }],
     "productName": "",
-    "productIntro": "元宇宙社区是一个充满无限可能性的虚拟空间，不仅可以让用户享受到前所未有的虚拟体验，也可以让品牌商家在其中展示和推广自己的产品和服务。我们的平台不仅是一个虚拟社交空间，更是一个探索和发现的空间。",
+    "productIntro": "元宇宙社区\n是一个充满无限可能性的虚拟空间，不仅可以让用户享受到前所未有的虚拟体验，也可以让品牌商家在其中展示和推广自己的产品和服务。我们的平台不仅是一个虚拟社交空间，更是一个探索和发现的空间。",
     "companyIntro": "元形水滴元宇宙引擎和工具\n很多人在创建元宇宙空间时使用复杂的工具，需要专业技能。对于普通人来说，学习和创建元宇宙变得困难。市场上的元宇宙工具对普通品牌和用户来说性能过剩，不简单易用。而且产品加载慢、体积大，需要下载应用程序和高性能设备。对于普通用户来说，体验门槛高，难以分享和传播。我们通过轻量级的互动方式，结合前沿的 AIGC 技术让传统的互联网和元宇宙的体验能够深度融合，易于传播和分享。"
   },
   {
@@ -156,78 +156,152 @@
     "company": "AIGC工具产品介绍",
     "logo": "/dropleton/logo.png",
     "mediaType": "swipe-image",
-    "src": "/dropleton/v/7/03.png",
+    "src": "/dropleton/8screens/V4/S4/03.png",
     "type": "vertical",
-    "product": [{ "name": "创建虚拟空间", "src": "/dropleton/v/7/01.png" }, { "name": "创建虚拟形象", "src": "/dropleton/v/7/02.png" }],
-    "productName": "轻松创建元宇宙",
-    "productIntro": "AIGC＋轻量级的引擎技术提供充满无限可能的元宇宙世界工具",
+    "product": [{ "name": "创建虚拟空间", "src": "/dropleton/8screens/V4/S4/01.png" }, { "name": "创建虚拟形象", "src": "/dropleton/8screens/V4/S4/02.png" }],
+    "productName": "",
+    "productIntro": "轻松创建元宇宙\nAIGC＋轻量级的引擎技术提供充满无限可能的元宇宙世界工具",
     "companyIntro": "我们专注于开发基于先进人工智能图形渲染技术的引擎，类似于未来的＂乐高公司＂。我们已经构建了一个开放且轻便的元宇宙应用社区，提供了预设系统、空间模板和简易编辑器，让人们以个性化的方式探索和体验元宇宙的美学生活方式。我们的引擎还支持创新的AIGC技术，能够生成超写实的数字人、2D交互数字人（角色）、物品、道具、图片、视频、空间和场景等多种元素，为每个人打造独一无二的元宇宙体验。我们的目标是提供给用户一个令人兴奋和无限可能的元宇宙世界。"
   },
   {
     "screenName": "屏幕一",
-    "company": " 杭州链城数字科技有限公司",
+    "company": "杭州旷维炬锐科技有限公司发展历程及规划",
     "mediaType": "swipe-image",
-    "src": [
-      "/liancheng/h/2/01.jpg",
-      "/liancheng/h/2/02.jpg",
-      "/liancheng/h/2/03.jpg",
-      "/liancheng/h/2/04.jpg"
-    ],
+    "src": ["/kw/8/h1.png"],
     "type": "horizon"
   },
   {
-    "company": "链城数科-三大核心业务解决方案",
     "screenName": "屏幕二",
+    "company": "杭州旷维炬锐科技有限公司-业务框架",
     "mediaType": "swipe-image",
-    "src": [
-      "/liancheng/h/4/01.jpg",
-      "/liancheng/h/4/02.jpg",
-      "/liancheng/h/4/03.jpg",
-      "/liancheng/h/4/04.jpg",
-      "/liancheng/h/4/05.jpg",
-      "/liancheng/h/4/06.jpg",
-      "/liancheng/h/4/07.jpg",
-      "/liancheng/h/4/08.jpg",
-      "/liancheng/h/4/09.jpg"
-    ],
+    "src": "/kw/8/h2.png",
     "type": "horizon"
   },
   {
-    "company": "链城数科-核心成员",
     "screenName": "屏幕三",
+    "company": "一站式场景开发和验证平台",
+    "mediaType": "swipe-image",
+    "src": "/kw/8/h3.png",
+    "type": "horizon"
+  },
+  {
+    "screenName": "屏幕四",
+    "company": "分布式边缘计算集群",
+    "mediaType": "swipe-image",
+    "src": "/kw/8/h4.png",
+    "type": "horizon"
+  },
+  {
+    "screenName": "屏幕五",
+    "company": "杭州旷维炬锐科技有限公司",
+    "logo": "/kw/logo.png",
+    "mediaType": "swipe-image",
+    "src": ["/kw/8/v1/1.png"],
+    "type": "vertical",
+    "product": [{ "name": "团队前身为获得全国仅50个\n浙江省仅2个的“小平科技创新团队", "src": "/kw/8/v1/2.png" }, { "name": "公司团队合照", "src": "/kw/8/v1/3.png" }],
+    "productName": "团队简介",
+    "productIntro": "旷维炬锐致力于打造算力、模型和数据为一体的生产侧模型即服务体系，用AI模型推动千行百业数智化转型，解决行业模型部署“最后一公里”难题，帮助各行业实现降本增效。",
+    "companyIntro": "团队组成\n目前，公司汇聚了一批心怀梦想、心志相投、具有工匠精神、开拓思维的“创客”，与之江实验室、杭州人工智能学会、华为昇腾部门、杭州硬功馆科技有限公司等单位频繁开展技术交流与项目合作。公司前身为全国仅50个的“小平科技创新团队”，始终践行小平科技创新精神，坚持以人为本，在创新实践中识别人才、培育人才和凝聚人才，努力造就一批德才兼备、国际一流的科技创新人才队伍，引领智能计算时代发展的科技浪潮。"
+  },
+  {
+    "screenName": "屏幕六",
+    "company": "合作伙伴及客户",
+    "logo": "/kw/logo.png",
+    "mediaType": "swipe-image",
+    "src": "/kw/8/v2/1.png",
+    "type": "vertical",
+    "product": [{ "name": "深度战略合作伙伴-华为", "src": "/kw/8/v2/2.png" }, { "name": "标杆客户", "src": "/kw/8/v2/3.png" }],
+    "productName": "合作伙伴及客户",
+    "productIntro": "目前基于旷维MaaS服务体系，公司在制造、工业、医疗、农业、包装等多个行业拥有成的一站式解决方案及商业落地案例，服务了之江实验室、富通集团、东风集团等服务标杆客户，进一步，公司依靠标杆客户案例，吸引赋能了如壹麦贰建科技、中衡包装、好络维等合作伙伴企业，依托旷维MaaS服务体系可轻易地自主实现公司业务的数智化转型，实现大幅降本增效。",
+    "companyIntro": "口碑及生态\n旷维科技以开放、合作的理念构建了一个既具有广泛参与性又高度信任的生态系统。目前，我们已经提供了超过500种定制化解决方案，并且服务调用次数已经超过了百万次。我们坚持均等原则，与300多家合作伙伴共同推动行业的数智化转型。通过建立标准化服务体系，我们共享超过200名模型贡献者的智慧，同时提供了20多种详尽的使用文档以支持开发者社区。与此同时，我们积极与高校实验室合作，吸引了900多名高校开发者的参与。沿着行业场景，我们不断打造满足商业客户需求的产品方案，提供三款标准化设备和多样化的高效软件服务。目前已有40多个行业场景化落地方案得到实现，进一步巩固了我们在行业内的口碑和地位。"
+  },
+  {
+    "screenName": "屏幕七",
+    "company": "杭州旷维炬锐科技有限公司-软件服务",
+    "logo": "/kw/logo.png",
+    "mediaType": "swipe-image",
+    "src": ["/kw/8/v3/1.png"],
+    "type": "vertical",
+    "product": [{ "name": "MegaFlow LLM Agent-零代码算法模型开发部署链路", "src": "/kw/8/v3/2.png" }, { "name": "MegaFlow生态", "src": "/kw/8/v3/3.png" }],
+    "productName": "服务介绍",
+    "productIntro": "在旷维MaaS体系中，面对传送带异物检测、产线故障排查、异常行为报警等多种业务场景，企业仅需在平台上阐述需求，经由自研多模态大模型MegaFlow Agent智能分析后，平台调用模型库和知识图谱，自动生成适用于具体功能场景的模型，并进行硬件匹配与部署。整个流程包括模型的调整、验证、优化仅需一周即可上线，将企业的业务高效智能化，同时避免了建设内部算法开发团队所需的高昂成本，实现大幅的成本降低与效率提升。",
+    "companyIntro": "MegaFlow LLM Agent\n我们的MaaS服务体系提供了丰富的软件服务，其中包括我们旗下的炬丰模型仓库，涵盖了200多个经过行业检测的算法模型。此外，我们将传统模型分解为模型组件，构建成了标准化数据，并形成了我们的模型知识图谱，通过平台调度，我们可以将这些模型自由组装成所需的场景算法模型。旷枢平台结合自研的多模态大模型，搭建了一个完整的零代码模型开发部署链路，可以为各大行业客户提供个性化的解决方案，最后实现在我们的平台中，用户只需通过对话、拖拽、组合等低代码的形式，即可实现模型的训练优化和设备端部署。"
+  },
+  {
+    "screenName": "屏幕八",
+    "company": "杭州旷维炬锐科技有限公司-硬件产品",
+    "logo": "/kw/logo.png",
+    "mediaType": "swipe-image",
+    "src": "/kw/8/v4/1.png",
+    "type": "vertical",
+    "product": [{ "name": "KV-R22A", "src": "/kw/8/v4/2.png" }, { "name": "KV-R22N", "src": "/kw/8/v4/3.png" }],
+    "productName": "旷维系列通用标准硬件产品",
+    "productIntro": "所有设备既能独立实现计算功能，也能作为从节点构成计算拓扑。与独立节点组成的算力系统相比，我们的分布式集群在计算能力、路由效率、数据安全方面均有显著优势。",
+    "companyIntro": "我们总结了各类行业的客户需求，推出了三款通用的硬件设备。分别面向不同的应用场景。"
+  },
+  {
+    "screenName": "屏幕一",
+    "company": "链城数科-荣誉资质",
     "mediaType": "swipe-image",
     "src": [
-      "/liancheng/h/7/01.jpg",
-      "/liancheng/h/7/02.jpg",
-      "/liancheng/h/7/03.jpg"
+      "/liancheng/8/h1/1.jpg",
+      "/liancheng/8/h1/2.jpg",
+      "/liancheng/8/h1/3.jpg",
+      "/liancheng/8/h1/4.jpg"
     ],
     "type": "horizon"
   },
   {
-    "company": "链城数科-展望未来",
-    "screenName": "屏幕四",
+
+    "screenName": "屏幕二",
+    "company": "链城数科-三大核心业务解决方案",
     "mediaType": "swipe-image",
     "src": [
-      "/liancheng/h/8/01.jpg",
-      "/liancheng/h/8/02.jpg",
-      "/liancheng/h/8/03.jpg"
+      "/liancheng/8/h2/1.jpg",
+      "/liancheng/8/h2/2.jpg",
+      "/liancheng/8/h2/3.jpg",
+      "/liancheng/8/h2/4.jpg",
+      "/liancheng/8/h2/5.jpg",
+      "/liancheng/8/h2/6.jpg",
+      "/liancheng/8/h2/7.jpg",
+      "/liancheng/8/h2/8.jpg",
+      "/liancheng/8/h2/9.jpg"
+    ],
+    "type": "horizon"
+  },
+  {
+    "screenName": "屏幕三",
+    "company": "链城数科-核心成员",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/8/h3/1.jpg",
+      "/liancheng/8/h3/2.jpg",
+      "/liancheng/8/h3/3.jpg"
+    ],
+    "type": "horizon"
+  },
+  {
+    "screenName": "屏幕四",
+    "company": "链城数科-未来展望",
+    "mediaType": "swipe-image",
+    "src": [
+      "/liancheng/8/h4/1.jpg",
+      "/liancheng/8/h4/2.jpg",
+      "/liancheng/8/h4/3.jpg"
     ],
     "type": "horizon"
   },
   {
     "screenName": "屏幕五",
-    "company": "企业介绍",
+    "company": "链城数字科技有限公司",
     "logo": "/liancheng/logo.png",
     "mediaType": "video",
-    "src": "/liancheng/v/1/lower.mp4",
+    "src": ["/liancheng/8/v1/1.mp4"],
     "type": "vertical",
-    "product": [
-      { "name": "核心建设", "src": "/liancheng/v/1/01.jpg" },
-      { "name": "核心平台", "src": "/liancheng/v/1/02.jpg" }
-    ],
-    "productName": "1+3+N 价值互联网生态",
-    "productIntro": "1:以覆盖全国 30 个省市公信力机构的联盟区块链平台“信证链”为底层基础设施\n3:面向数据要素市场化、数据产权的重大国家战略，形成数据证据化、数据资产化和数据可信安全共享三大核心解决方案\nN:多元应用场景落地",
-    "companyIntro": "在国家数据要素及其市场化配置改革战略的指引下， 链城数科从政府合作、产业创新、高校协作、规划研究和生态应用五个方面， 进行“区块链应用+生态圈建设”，构建 1+3+N 价值互联网生态，结合区块链、隐私计算、大 数据等技术，为降低信任成本，释放发掘数据要素价值，提供技术平台、解决方案和运营服务。"
+    "product": [{ "name": "核心建设", "src": "/liancheng/8/v1/2.jpg" }, { "name": "核心平台", "src": "/liancheng/8/v1/3.jpg" }],
+    "productName": "",
+    "productIntro": "1+3+N价值互联网生态\n1：以覆盖全国30个省市公信力机构的联盟区块链平台“信证链”为底层基础设施\n3：面向数据要素市场化、数据产权的重大国家战略，形成数据证据化、数据资产化和数据可信安全共享三大核心解决方案\nN：多元应用场景落地",
+    "companyIntro": "关于我们\n在国家数据要素及其市场化配置改革战略的指引下，\n链城数科从政府合作、产业创新、高校协作、规划研究和生态应用五方面，\n进行“区块链应用+生态圈建设”，构建 1+3+N 价值互联网生态，结合区块链、隐私计算、大数据等技术，为降低信任成本，释放发掘数据要素价值，提供技术平台、解决方案和运营服务。"
   },
   {
     "screenName": "屏幕六",
@@ -235,22 +309,19 @@
     "logo": "/liancheng/logo.png",
     "mediaType": "swipe-image",
     "src": [
-      "/liancheng/v/3/03.jpg",
-      "/liancheng/v/3/04.jpg",
-      "/liancheng/v/3/05.jpg",
-      "/liancheng/v/3/06.jpg",
-      "/liancheng/v/3/07.jpg",
-      "/liancheng/v/3/08.jpg",
-      "/liancheng/v/3/09.jpg"
+      "/liancheng/8/v2/1.jpg",
+      "/liancheng/8/v2/2.jpg",
+      "/liancheng/8/v2/3.jpg",
+      "/liancheng/8/v2/4.jpg",
+      "/liancheng/8/v2/5.jpg",
+      "/liancheng/8/v2/6.jpg",
+      "/liancheng/8/v2/7.jpg"
     ],
     "type": "vertical",
-    "product": [
-      { "name": "核心平台", "src": "/liancheng/v/3/01.jpg" },
-      { "name": "信证链助手", "src": "/liancheng/v/3/02.jpg" }
-    ],
-    "productName": "信证链 核心优势",
-    "productIntro": "具备公信力的权威联盟链 \n· 价值互联网可信基础设施 \n· 多场景链上链下信任协同 \n· 国产自主可控区块链底层",
-    "companyIntro": "信证链 是全国首个也是规模最大运营级公信联盟区块链平台，是符合国家战略安全规划的区块 链核心技术平台，已链接全国范围三十个省级行政区三十余家公信力机构。信证链 目标是成为可信、安全、高效的分布式数据协作生态设施，实现电子数据证据化和数字 资产可信确权流转。信证链 将“筑链成网”，实现全国丰富场景数据协同，成为可信数字社会的基础设施和可信数 字资产流通基础设施，有力支撑更高层次的各类社会场景中需要完善信任机制的创新应用。"
+    "product": [{ "name": "核心平台", "src": "/liancheng/8/v2/8.jpg" }, { "name": "@信证链助手", "src": "/liancheng/8/v2/9.jpg" }],
+    "productName": "",
+    "productIntro": "信证链 核心优势\n· 具备公信力的权威联盟链\n· 价值互联网可信基础设施\n· 多场景链上链下信任协同\n· 国产自主可控区块链底层",
+    "companyIntro": "筑链成网\n信证链 是全国首个也是规模最大运营级公信联盟区块链平台，是符合国家战略安全规划的区块链核心技术平台,\n已链接全国范围三十个省级行政区三十余家公信力机构。\n信证链 目标是成为可信、安全、高效的分布式数据协作生态设施，实现电子数据证据化和数字资产可信确权流转。\n信证链 将“筑链成网”,实现全国丰富场景数据协同，成为可信数字社会的基础设施 和可信数字资产流通基础设施，\n有力支撑更高层次的各类社会场景中需要完善信任机制的创新应用。"
   },
   {
     "screenName": "屏幕七",
@@ -258,24 +329,21 @@
     "logo": "/liancheng/logo.png",
     "mediaType": "swipe-image",
     "src": [
-      "/liancheng/v/5/03.jpg",
-      "/liancheng/v/5/04.jpg",
-      "/liancheng/v/5/05.jpg",
-      "/liancheng/v/5/06.jpg",
-      "/liancheng/v/5/07.jpg",
-      "/liancheng/v/5/08.jpg",
-      "/liancheng/v/5/09.jpg",
-      "/liancheng/v/5/10.jpg",
-      "/liancheng/v/5/11.jpg"
+      "/liancheng/8/v3/1.jpg",
+      "/liancheng/8/v3/2.jpg",
+      "/liancheng/8/v3/3.jpg",
+      "/liancheng/8/v3/4.jpg",
+      "/liancheng/8/v3/5.jpg",
+      "/liancheng/8/v3/6.jpg",
+      "/liancheng/8/v3/7.jpg",
+      "/liancheng/8/v3/8.jpg",
+      "/liancheng/8/v3/9.jpg"
     ],
     "type": "vertical",
-    "product": [
-      { "name": "《区块链+社会治理》", "src": "/liancheng/v/5/01.jpg" },
-      { "name": "《发现中国区块链创新应用》", "src": "/liancheng/v/5/03.jpg" }
-    ],
-    "productName": "国内一流区块链咨询品牌",
-    "productIntro": "依托产学研用一体化平台，链城数科具备区块链领域国家级战略规划和区域级应用与产业发展 规划的研究制订及其指导下的应用场景设计能力、标准规范编制能力和各级各类区块链专项课 题研究能力。\n公司面向区块链领域技术应用、产业发展、标准规范等方向，提供视角前瞻、理念先进、系统 谋划、落地可行的咨询研究服务，编制形成白皮书、研究报告、总体规划及标准规范。",
-    "companyIntro": "未来，链城数科将持续发挥“国内一流区块链咨询品牌”的影响力， 发挥浙江大学、复旦大学及宁波标准区块链产业发展研究院人才优势， 在国家“信息创新国产化”战略指引下， 从政府合作、产业创新、高校协作、规划研究和生态应用五方面进行“区块链应用+生态圈建设”， 不断深度挖掘与拓展区块链在数字经济、数字社会和数字政府等方面典型应用场景， 在数字中国的建设大潮中创造应有的价值。"
+    "product": [{ "name": "《区块链+社会治理》", "src": "/liancheng/8/v3/10.jpg" }, { "name": "《发现中国区块链创新应用》", "src": "/liancheng/8/v3/11.jpg" }],
+    "productName": "",
+    "productIntro": "国内一流区块链咨询品牌\n依托产学研用一体化平台，链城数科具备区块链领域国家级战略规划和区域级应用与产业发展规划的研究制订及其指导下的应用场景设计能力、标准规范编制能力和各级各类区块链专项课题研究能力。\n公司面向区块链领域技术应用、产业发展、标准规范等方向，提供视角前瞻、理念先进、系统谋划、落地可行的咨询研究服务，编制形成白皮书、研究报告、总体规划及标准规范。",
+    "companyIntro": "乘风破浪，砥砺前行\n未来，链城数科将持续发挥“国内一流区块链咨询品牌”的影响力，\n发挥浙江大学、复旦大学及宁波标准区块链产业发展研究院人才优势, \n在国家“信息创新国产化”战略指引下，\n从政府合作、产业创新、高校协作、规划研究和生态应用五方面进行“区块链应用+生态圈建设”，\n不断深度挖掘与拓展区块链在数字经济、数字社会和数字政府等方面典型应用场景，\n在数字中国的建设大潮中创造应有的价值。"
   },
   {
     "screenName": "屏幕八",
@@ -283,52 +351,49 @@
     "logo": "/liancheng/logo.png",
     "mediaType": "swipe-image",
     "src": [
-      "/liancheng/v/6/03.jpg",
-      "/liancheng/v/6/04.jpg",
-      "/liancheng/v/6/05.jpg",
-      "/liancheng/v/6/06.jpg",
-      "/liancheng/v/6/07.jpg",
-      "/liancheng/v/6/08.jpg",
-      "/liancheng/v/6/09.jpg",
-      "/liancheng/v/6/10.jpg",
-      "/liancheng/v/6/11.jpg",
-      "/liancheng/v/6/12.jpg"
+      "/liancheng/8/v4/1.jpg",
+      "/liancheng/8/v4/2.jpg",
+      "/liancheng/8/v4/3.jpg",
+      "/liancheng/8/v4/4.jpg",
+      "/liancheng/8/v4/5.jpg",
+      "/liancheng/8/v4/6.jpg",
+      "/liancheng/8/v4/7.jpg",
+      "/liancheng/8/v4/8.jpg",
+      "/liancheng/8/v4/9.jpg",
+      "/liancheng/8/v4/10.jpg"
     ],
     "type": "vertical",
-    "product": [
-      { "name": "与江苏省大数据管理中心签署战略合作协议", "src": "/liancheng/v/6/01.jpg" },
-      { "name": "第一届中国信证联盟论坛日", "src": "/liancheng/v/6/02.jpg" }
-    ],
-    "productName": "链城数科-价值观",
-    "productIntro": "专业素养，自驱担当\n创新致优，高效协作\n贴近用户，服务社会",
-    "companyIntro": "链城数字科技有限公司积极拓展市场，与多级部委、各省市优秀企业形成战略合作， 如江苏省大数据管理中心、金电信科、浙江市监司法鉴定中心等， 同时承办了公安部第十届警博会 、2023 全球数据合规年度论坛等行业活动， 构建可信、安全、高效的价值互联网联盟生态圈，为信证链服务能力提升和信证联盟生态巩固打下坚实基础。"
+    "product": [{ "name": "与江苏省大数据管理中心签署战略合作协议", "src": "/liancheng/8/v4/11.jpg" }, { "name": "第一届中国信证联盟论坛日", "src": "/liancheng/8/v4/12.jpg" }],
+    "productName": "",
+    "productIntro": "链城数科-价值观\n专业素养，自驱担当\n创新致优，高效协作\n贴近用户，服务社会",
+    "companyIntro": "步履不止，未来可期\n链城数字科技有限公司积极拓展市场，与多级部委、各省市优秀企业形成战略合作，\n如江苏省大数据管理中心、金电信科、浙江市监司法鉴定中心等，\n同时承办了公安部第十届警博会 、2023全球数据合规年度论坛等行业活动，\n构建可信、安全、高效的价值互联网联盟生态圈，\n为信证链服务能力提升和信证联盟生态巩固打下坚实基础。"
   },
   {
     "screenName": "屏幕一",
     "company": "AI数字专家生产平台",
     "mediaType": "video",
-    "src": "/xinghuo/8screens/horizon1.mp4",
+    "src": "/xinghuo/8/h1.mp4",
     "type": "horizon"
   },
   {
     "screenName": "屏幕二",
     "company": "星火之言校园大模型",
     "mediaType": "video",
-    "src": "/xinghuo/8screens/horizon2.mp4",
+    "src": "/xinghuo/8/h2.mp4",
     "type": "horizon"
   },
   {
     "screenName": "屏幕三",
     "company": "校园虚拟学长解决方案",
     "mediaType": "video",
-    "src": "/xinghuo/8screens/horizon3.mp4",
+    "src": "/xinghuo/8/h3.mp4",
     "type": "horizon"
   },
   {
     "screenName": "屏幕四",
     "company": "政务数智专家解决方案",
     "mediaType": "video",
-    "src": "/xinghuo/8screens/horizon4.mp4",
+    "src": "/xinghuo/8/h4.mp4",
     "type": "horizon"
   },
   {
@@ -336,14 +401,12 @@
     "company": "星火致知核心技术",
     "logo": "/xinghuo/logo.png",
     "mediaType": "swipe-image",
-    "src": [
-      "/xinghuo/8screens/vertical1/01.png",
-      "/xinghuo/8screens/vertical1/02.png",
-      "/xinghuo/8screens/vertical1/03.png",
-      "/xinghuo/8screens/vertical1/04.png"
-    ],
+    "src": ["/xinghuo/8/v1/01.png",
+      "/xinghuo/8/v1/02.png",
+      "/xinghuo/8/v1/03.png",
+      "/xinghuo/8/v1/04.png"],
     "type": "vertical",
-    "product": [{ "name": "核心引擎", "src": "/xinghuo/8screens/vertical1/05.png" }, { "name": "垂直大模型", "src": "/xinghuo/8screens/vertical1/06.png" }],
+    "product": [{ "name": "核心引擎", "src": "/xinghuo/8/v1/05.png" }, { "name": "垂直大模型", "src": "/xinghuo/8/v1/06.png" }],
     "productName": "",
     "productIntro": "双轮驱动\n自研STA引擎判断调用大模型的时机和需实现的具体任务，从而完成底层自然语言处理全流程，而大模型进步提升语义泛化和语义理解能力，让AI更加“听得懂”。",
     "companyIntro": "AI大脑\n星火致知结合已有语料数据和专家的先验知识打造的AI大脑，能够对用户的咨询内容进行精准语义解析，通过其多轮对话能力以及上下文理解能力，在对话中可以形成短时记忆，并且会主动为用户提供服务。"
@@ -353,11 +416,11 @@
     "company": "星火致知核心产品",
     "logo": "/xinghuo/logo.png",
     "mediaType": "swipe-image",
-    "src": ["/xinghuo/8screens/vertical2/01.png",
-      "/xinghuo/8screens/vertical2/02.png",
-      "/xinghuo/8screens/vertical2/03.png"],
+    "src": ["/xinghuo/8/v2/01.png",
+      "/xinghuo/8/v2/02.png",
+      "/xinghuo/8/v2/03.png"],
     "type": "vertical",
-    "product": [{ "name": "数字专家", "src": "/xinghuo/8screens/vertical2/04.png" }, { "name": "领域知识", "src": "/xinghuo/8screens/vertical2/05.png" }],
+    "product": [{ "name": "数字专家", "src": "/xinghuo/8/v2/04.png" }, { "name": "领域知识", "src": "/xinghuo/8/v2/05.png" }],
     "productName": "",
     "productIntro": "数字专家\n打造领域AI数字专家形象，对虚拟人形象设计生产、语音配置、语义理解交互等多个方面进行整合构建，通过星火致知平台，一站式完成全部建设流程。",
     "companyIntro": "领域知识\n为降低知识库建设难度，使得建设工作事半功倍，星火提出领域知识模型——技能包的概念，整合在场景项目落地和运营过程中积累的海量数据，预置完备的领域知识库，进行精细化分类分级管理，并具备极强语义理解能力，即拿即用，为客户减负。"
@@ -367,11 +430,11 @@
     "company": "校园场景解决方案",
     "logo": "/xinghuo/logo.png",
     "mediaType": "swipe-image",
-    "src": ["/xinghuo/8screens/vertical3/01.png",
-      "/xinghuo/8screens/vertical3/02.png",
-      "/xinghuo/8screens/vertical3/03.png"],
+    "src": ["/xinghuo/8/v3/01.png",
+      "/xinghuo/8/v3/02.png",
+      "/xinghuo/8/v3/03.png"],
     "type": "vertical",
-    "product": [{ "name": "虚拟老师", "src": "/xinghuo/8screens/vertical3/04.png" }, { "name": "虚拟学长", "src": "/xinghuo/8screens/vertical3/05.png" }],
+    "product": [{ "name": "虚拟老师", "src": "/xinghuo/8/v3/04.png" }, { "name": "虚拟学长", "src": "/xinghuo/8/v3/05.png" }],
     "productName": "",
     "productIntro": "校园虚拟学长\n打造贯穿学生入学前→学习中→毕业后全流程的陪伴级服务，解决学生在校期间全生命周期的咨询需求。",
     "companyIntro": "全流程陪伴服务\n通过全渠道的接洽赋能，提供各维度高度拟人化咨询服务，打造学生在校期间全生命周期的陪伴级助学服务，解决学生各阶段咨询需求，实现7*24小时不间休的标准化服务；并允许开放接口，能够实现与业务系统的深度结合。"
@@ -381,13 +444,14 @@
     "company": "政务场景解决方案",
     "logo": "/xinghuo/logo.png",
     "mediaType": "swipe-image",
-    "src": ["/xinghuo/8screens/vertical4/01.png",
-      "/xinghuo/8screens/vertical4/02.png",
-      "/xinghuo/8screens/vertical4/03.png"],
+    "src": ["/xinghuo/8/v4/01.png",
+      "/xinghuo/8/v4/02.png",
+      "/xinghuo/8/v4/03.png"],
     "type": "vertical",
-    "product": [{ "name": "浙江政务小浙", "src": "/xinghuo/8screens/vertical4/04.png" }, { "name": "福建政务福博士", "src": "/xinghuo/8screens/vertical4/05.png" }],
+    "product": [{ "name": "浙江政务小浙", "src": "/xinghuo/8/v4/04.png" }, { "name": "福建政务福博士", "src": "/xinghuo/8/v4/05.png" }],
     "productName": "",
     "productIntro": "政务数智专家\n积累交管、公安、人社、信访、税务等全政务场景海量知识，并基于真实语料长期进行模型优化，提升AI服务体验。政务数智专家已服务数千万市民，快速解决市民疑问，减轻人工客服压力。",
     "companyIntro": "一体化智能服务\n构建智能问答服务助手，基于海量政务场景数据、政策文献、专家知识，利用自然语言处理、自然引擎、深度学习、知识图谱等人工智能技术打造，集智能咨询、精准导办、投诉建议、智能推送等功能于一体的政务服务机器人，为市民提供业务咨询、信息查询、投诉建议、引导办理等服务。"
   }
+
 ]

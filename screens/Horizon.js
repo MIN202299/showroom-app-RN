@@ -142,7 +142,7 @@ export default function Horizon() {
                                 </View>
                               ))
                               : (<View>
-                                <Image source={resourceMapping[screenData.src]} style={{ flex: 1 }} resizeMode='contain'></Image>
+                                <Image source={resourceMapping[screenData.src]} style={{ flex: 1, width: '100%', height: '100%' }} resizeMode='contain'></Image>
                               </View>)
                           }
                         </PagerView>)
