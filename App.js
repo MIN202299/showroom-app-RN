@@ -1,6 +1,6 @@
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -9,7 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 // 自定义字体
 import { io } from 'socket.io-client'
 import { Keyboard } from 'react-native'
-import { SOCKET_URL, STORAGE_KEY, Theme } from './store/constant'
+import { DEFAULT_URL, SOCKET_URL, STORAGE_KEY, ThemeEnum } from './store/constant'
 import { setCustomText } from './utils'
 
 import SelectScreen from './screens/SelectScreen'
@@ -36,13 +36,52 @@ export default function App() {
   }, [fontsLoaded, fontError])
 
   const [state, setState] = useState({
-    theme: Theme.DEFAULT,
+    theme: '默认',
     config: null,
     connected: false,
     err: null,
   })
 
+  const [allThemesMap, setAllThemesMap] = useState({})
+
+  const currentTheme = useMemo(() => {
+    if (!state.config || !allThemesMap || !state.theme)
+      return []
+    return allThemesMap[state.theme] || []
+  }, [state, allThemesMap])
+
+  // useEffect(() => {
+  //   console.log('currentTheme', currentTheme)
+  // }, [currentTheme])
+
   const socket = useRef()
+
+  async function getAllConfig() {
+    try {
+      const res = await fetch(`${DEFAULT_URL}/config/getAll`, {
+        method: 'GET',
+      })
+      const data = await res.json()
+
+      if (data.code === 200) {
+        const _allThemes = data.data.filter(item => item.themeType === ThemeEnum.screen_8)
+        const _allThemesMap = _allThemes.reduce((result, current) => {
+          const _detail = JSON.parse(current.detail)
+          result[current.themeName] = _detail
+          return result
+        }, {})
+        setAllThemesMap(_allThemesMap)
+        // console.log('_allThemesMap', _allThemesMap['链城'])
+      }
+    }
+    catch (err) {
+      console.error('查询失败', err)
+    }
+  }
+
+  useEffect(() => {
+    getAllConfig()
+  }, [])
 
   useEffect(() => {
     AsyncStorage.getItem(STORAGE_KEY).then((res) => {
@@ -87,7 +126,7 @@ export default function App() {
     return null
 
   return (
-    <AppContext.Provider value={{ state, setGlobalContext: setState }}>
+    <AppContext.Provider value={{ state, setGlobalContext: setState, currentTheme }}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
           headerShown: false,

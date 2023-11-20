@@ -12,10 +12,8 @@ import { ResizeMode, Video } from 'expo-av'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import PagerView from 'react-native-pager-view'
-import { DefaultScreenWords, STORAGE_KEY } from '../store/constant'
-import { resourceMapping } from '../data/resourceMapping'
+import { STORAGE_KEY } from '../store/constant'
 import { AppContext } from '../store'
-import data from '../data'
 
 const styles = StyleSheet.create({
   container: {
@@ -38,6 +36,10 @@ export default function Horizon() {
   const screenData = useMemo(() => {
     return com.find(item => item.screenName === screenName)
   }, [com, screenName])
+
+  // useEffect(() => {
+  //   console.log('screenData', screenData)
+  // }, [screenData])
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -66,7 +68,7 @@ export default function Horizon() {
   const [modal, setModal] = useState('')
   const context = useContext(AppContext)
   useEffect(() => {
-    console.log('horizon context', context)
+    // console.log('horizon context', context)
     if (!context.state.connected)
       setModal('Socket连接已断开，请重启应用，或者检查服务器')
 
@@ -81,8 +83,8 @@ export default function Horizon() {
         ? navigation.navigate('Horizon')
         : navigation.navigate('Vertical')
     }
-    setCom(data[context.state.theme])
-  }, [context.state])
+    setCom(context.currentTheme)
+  }, [context])
 
   function handleAutoplay() {
     if (!video)
@@ -91,18 +93,29 @@ export default function Horizon() {
     video.current.playAsync()
   }
   function getView() {
-    if (!context.state.config || !screenName)
+    if (!context.state.config || !screenName || !context.state.theme || !screenData)
       return null
-    if (!screenData) {
+    if (context.state.theme === '默认') {
       return (
         <ImageBackground source={
           context.state.config.direction === '横向'
             ? require('../assets/bg/horizon-default.png')
             : require('../assets/bg/vertical-default.png')
         } style={{ width: '100%', height: '100%' }} resizeMode="stretch">
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={[styles.textBold, { fontSize: 100 }]}>{DefaultScreenWords[screenName][0]}</Text>
-            <Text style={{ color: '#fff', fontSize: 60 }}>{DefaultScreenWords[screenName][1]}</Text>
+          <View style={{ width: '100vw', height: '100vh' }}>
+            {
+              screenData.mediaType === 'video'
+                ? (<Video
+                  ref={video}
+                  source={{ uri: screenData.src }}
+                  resizeMode={ResizeMode.STRETCH}
+                  useNativeControls={false}
+                  isLooping
+                  isMuted
+                  onLoad={() => { handleAutoplay() }}
+                  style={{ width: '100%', height: '100%' }}></Video>)
+                : (<Image source={{ uri: screenData.src }} style={{ width: '100%', height: '100%' }} resizeMode='contain'></Image>)
+            }
           </View>
         </ImageBackground>
       )
@@ -123,7 +136,7 @@ export default function Horizon() {
                       screenData.mediaType === 'video'
                         ? (<Video
                           ref={video}
-                          source={resourceMapping[screenData.src]}
+                          source={{ uri: screenData.src }}
                           resizeMode={ResizeMode.CONTAIN}
                           useNativeControls
                           isLooping
@@ -138,11 +151,11 @@ export default function Horizon() {
                                   justifyContent: 'center',
                                   alignItems: 'center',
                                 }} key={idx}>
-                                  <Image source={resourceMapping[src]} style={{ width: '100%', height: '100%' }} resizeMode='contain'></Image>
+                                  <Image source={{ uri: src }} style={{ width: '100%', height: '100%' }} resizeMode='contain'></Image>
                                 </View>
                               ))
                               : (<View>
-                                <Image source={resourceMapping[screenData.src]} style={{ flex: 1, width: '100%', height: '100%' }} resizeMode='contain'></Image>
+                                <Image source={{ uri: screenData.src }} style={{ flex: 1, width: '100%', height: '100%' }} resizeMode='contain'></Image>
                               </View>)
                           }
                         </PagerView>)

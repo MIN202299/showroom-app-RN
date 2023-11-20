@@ -12,10 +12,8 @@ import { useContext, useEffect, useMemo, useRef, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import PagerView from 'react-native-pager-view'
 import { ResizeMode, Video } from 'expo-av'
-import { DefaultScreenWords, STORAGE_KEY } from '../store/constant'
-import { resourceMapping } from '../data/resourceMapping'
+import { STORAGE_KEY } from '../store/constant'
 import { AppContext } from '../store'
-import data from '../data'
 
 const styles = StyleSheet.create({
   container: {
@@ -87,27 +85,38 @@ export default function Vertical() {
         ? navigation.navigate('Horizon')
         : navigation.navigate('Vertical')
     }
-    setCom(data[context.state.theme])
-  }, [context.state])
+    setCom(context.currentTheme)
+  }, [context])
 
   function getView() {
-    if (!context.state.config || !screenName)
+    if (!context.state.config || !screenName || !context.state.theme || !screenData)
       return null
-    if (!screenData) {
+    if (context.state.theme === '默认') {
       return (
         <ImageBackground source={
           context.state.config.direction === '横向'
             ? require('../assets/bg/horizon-default.png')
             : require('../assets/bg/vertical-default.png')
         } style={{ width: '100%', height: '100%' }} resizeMode="stretch">
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={[styles.textBold, { fontSize: 100 }]}>{DefaultScreenWords[screenName][0]}</Text>
-            <Text style={{ color: '#fff', fontSize: 60 }}>{DefaultScreenWords[screenName][1]}</Text>
+          <View style={{ width: '100vw', height: '100vh' }}>
+            {
+              screenData.mediaType === 'video'
+                ? (<Video
+                  ref={video}
+                  source={{ uri: screenData.src }}
+                  resizeMode={ResizeMode.STRETCH}
+                  useNativeControls={false}
+                  isLooping
+                  isMuted
+                  onLoad={() => { handleAutoplay() }}
+                  style={{ width: '100%', height: '100%' }}></Video>)
+                : (<Image source={{ uri: screenData.src }} style={{ width: '100%', height: '100%' }} resizeMode='contain'></Image>)
+            }
           </View>
         </ImageBackground>
       )
     }
-    else {
+    else if (screenData.product) {
       return (
         <View style={{ width: '90%', height: '85%', padding: 2 }}>
           <BlurView intensity={20} style={{ flex: 1 }}>
@@ -140,7 +149,7 @@ export default function Vertical() {
                     <View style={{ flexWrap: 'nowrap', flexDirection: 'row', gap: 15, marginTop: 4 }}>
                       <LinearGradient colors={['#D8D8D8aa', 'transparent', '#D8D8D8aa']} style={{ flex: 1, aspectRatio: 1, padding: 1, borderRadius: 5, overflow: 'hidden' }}>
                         <View style={{ flex: 1, borderRadius: 4, overflow: 'hidden' }}>
-                          <Image source={resourceMapping[screenData.product[0].src]} resizeMode='cover' style={{ width: '100%', height: '100%' }}></Image>
+                          <Image source={{ uri: screenData.product[0].src }} resizeMode='cover' style={{ width: '100%', height: '100%' }}></Image>
                         </View >
                         {
                           (screenData.product[0].name && (
@@ -154,7 +163,7 @@ export default function Vertical() {
                       </LinearGradient>
                       <LinearGradient colors={['#D8D8D8aa', 'transparent', '#D8D8D8aa']} style={{ flex: 1, aspectRatio: 1, padding: 1, borderRadius: 5, overflow: 'hidden' }}>
                         <View style={{ flex: 1, borderRadius: 4, overflow: 'hidden' }}>
-                          <Image source={resourceMapping[screenData.product[1].src]}
+                          <Image source={{ uri: screenData.product[1].src }}
                             resizeMode='cover'
                             style={{ width: '100%', height: '100%' }}></Image>
                         </View>
@@ -186,7 +195,7 @@ export default function Vertical() {
                           ? (
                             <Video
                               ref={video}
-                              source={resourceMapping[screenData.src]}
+                              source={{ uri: screenData.src }}
                               resizeMode={ResizeMode.CONTAIN}
                               style={{ flex: 1 }}
                               useNativeControls
@@ -204,11 +213,11 @@ export default function Vertical() {
                                         justifyContent: 'center',
                                         alignItems: 'center',
                                       }} key={idx}>
-                                        <Image source={resourceMapping[src]} style={{ width: '100%', height: '100%' }} resizeMode='contain'></Image>
+                                        <Image source={{ uri: src }} style={{ width: '100%', height: '100%' }} resizeMode='contain'></Image>
                                       </View>
                                     ))
                                     : (<View>
-                                      <Image source={resourceMapping[screenData.src]} style={{ width: '100%', height: '100%' }} resizeMode='contain'></Image>
+                                      <Image source={{ uri: screenData.src }} style={{ width: '100%', height: '100%' }} resizeMode='contain'></Image>
                                     </View>)
                                 }
                               </PagerView>)
@@ -239,12 +248,15 @@ export default function Vertical() {
           {
             <View style={{ position: 'absolute', top: 15, left: 15, height: 100, width: 120 }}>
               <ImageBackground source={require('../assets/bg/logo-bg.png')} resizeMode='contain' style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                <Image source={resourceMapping[screenData.logo]} resizeMode='contain' style={{ width: '66%', height: '66%' }}></Image>
+                <Image source={{ uri: screenData.logo }} resizeMode='contain' style={{ width: '66%', height: '66%' }}></Image>
               </ImageBackground>
             </View>
           }
         </View>
       )
+    }
+    else {
+      return null
     }
   }
 

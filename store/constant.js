@@ -1,6 +1,10 @@
 export const STORAGE_KEY = 'showroom-storage'
 
-export const SOCKET_URL = 'http://192.168.2.109:8422'
+export const BACKEND = '192.168.2.125'
+
+export const SOCKET_URL = `http://${BACKEND}:8422`
+
+export const DEFAULT_URL = `http://${BACKEND}:8421`
 
 export const Theme = {
   DEFAULT: '0',
@@ -21,4 +25,11 @@ export const DefaultScreenWords = {
   屏幕六: ['数据', 'Data'],
   屏幕七: ['算法', 'Algorithm'],
   屏幕八: ['大语言模型', 'Large Language Model'],
+}
+
+export const ThemeEnum = {
+  screen_3: 0,
+  screen_8: 1,
+  rfid: 2,
+  propaganda: 3,
 }
