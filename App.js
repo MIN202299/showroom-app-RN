@@ -46,8 +46,8 @@ export default function App() {
 
   const currentTheme = useMemo(() => {
     if (!state.config || !allThemesMap || !state.theme)
-      return []
-    return allThemesMap[state.theme] || []
+      return { theme: state.theme, data: [] }
+    return { theme: state.theme, data: allThemesMap[state.theme] } || { theme: state.theme, data: [] }
   }, [state, allThemesMap])
 
   // useEffect(() => {

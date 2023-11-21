@@ -34,7 +34,7 @@ export default function Horizon() {
   const [com, setCom] = useState([])
   const [screenName, setScreenName] = useState('')
   const screenData = useMemo(() => {
-    return com.find(item => item.screenName === screenName)
+    return com.find.data(item => item.screenName === screenName)
   }, [com, screenName])
 
   // useEffect(() => {
@@ -93,7 +93,11 @@ export default function Horizon() {
     video.current.playAsync()
   }
   function getView() {
-    if (!context.state.config || !screenName || !context.state.theme || !screenData)
+    if (!context.state.config
+      || !screenName
+      || !context.state.theme
+      || !screenData
+      || com.theme !== context.state.theme)
       return null
     if (context.state.theme === '默认') {
       return (
