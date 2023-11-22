@@ -46,8 +46,8 @@ export default function App() {
 
   const currentTheme = useMemo(() => {
     if (!state.config || !allThemesMap || !state.theme)
-      return { theme: state.theme, data: [] }
-    return { theme: state.theme, data: allThemesMap[state.theme] } || { theme: state.theme, data: [] }
+      return []
+    return allThemesMap[state.theme] || []
   }, [state, allThemesMap])
 
   // useEffect(() => {
@@ -67,7 +67,7 @@ export default function App() {
         const _allThemes = data.data.filter(item => item.themeType === ThemeEnum.screen_8)
         const _allThemesMap = _allThemes.reduce((result, current) => {
           const _detail = JSON.parse(current.detail)
-          result[current.themeName] = _detail
+          result[current.themeName] = _detail.map(item => Object.assign(item, { themeName: current.themeName }))
           return result
         }, {})
         setAllThemesMap(_allThemesMap)

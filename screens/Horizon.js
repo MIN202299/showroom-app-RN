@@ -34,7 +34,7 @@ export default function Horizon() {
   const [com, setCom] = useState([])
   const [screenName, setScreenName] = useState('')
   const screenData = useMemo(() => {
-    return com.find.data(item => item.screenName === screenName)
+    return com.find(item => item.screenName === screenName)
   }, [com, screenName])
 
   // useEffect(() => {
@@ -97,8 +97,9 @@ export default function Horizon() {
       || !screenName
       || !context.state.theme
       || !screenData
-      || com.theme !== context.state.theme)
+      || context.state.theme !== screenData.themeName)
       return null
+
     if (context.state.theme === '默认') {
       return (
         <ImageBackground source={
