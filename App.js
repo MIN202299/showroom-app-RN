@@ -114,8 +114,13 @@ export default function App() {
       console.log('socket 连接断开')
       setState({ ...state, connected: false })
     })
+    // 监听主题变化
     socket.current.on('server', (res) => {
       setState({ ...state, theme: res })
+    })
+    // 监听配置变化
+    socket.current.on('refresh', () => {
+      getAllConfig()
     })
     return () => {
       socket.current.off()
